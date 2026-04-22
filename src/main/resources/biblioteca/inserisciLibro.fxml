@@ -56,7 +56,7 @@
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="246.0" text="Copie Totali:" visible="false" GridPane.rowIndex="4" />
+                  <Label fx:id="lblCopieTotali" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="246.0" text="Copie Totali:" visible="false" GridPane.rowIndex="4" />
                   <TextField fx:id="txtCopieTotali" prefHeight="31.0" prefWidth="225.0" promptText="copie Totali..." visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets right="10.0" />
