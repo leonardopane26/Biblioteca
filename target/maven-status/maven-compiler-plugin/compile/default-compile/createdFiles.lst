@@ -1,0 +1,17 @@
+biblioteca\controller\InserisciUtenteController.class
+biblioteca\controller\VistaLibroController.class
+biblioteca\controller\VistaPrestitoController.class
+biblioteca\model\Archivio.class
+biblioteca\model\GestoreBiblioteca.class
+biblioteca\controller\RegistraPrestitoController.class
+biblioteca\utils\UtenteComparator.class
+biblioteca\model\Utente.class
+biblioteca\controller\InserisciLibroController.class
+biblioteca\app\App.class
+biblioteca\controller\MainViewController.class
+biblioteca\controller\RegistraRestituzioneController.class
+biblioteca\model\Prestito.class
+biblioteca\utils\PrestitoComparator.class
+biblioteca\model\Libro.class
+biblioteca\utils\LibroComparator.class
+biblioteca\controller\VistaUtenteController.class
