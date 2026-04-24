@@ -100,6 +100,10 @@ public class GestoreBiblioteca {
                 .collect(Collectors.toList());
     }
     
+    public List<Prestito> filtraPrestitUtente(Utente u){
+        return archivio.filtraPrestitiPerUtente(u);
+    }
+    
     public void registraUtente(Utente u){
         if(archivio.cercaUtentePerMatricola(u.getMatricola()) == null){
             archivio.getListaUtenti().add(u);
