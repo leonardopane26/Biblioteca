@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="biblioteca.VistaPrestitoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controller.VistaPrestitoController">
    <children>
       <VBox prefHeight="400.0" prefWidth="501.0">
          <children>
@@ -44,7 +43,7 @@
             </GridPane>
             <HBox prefHeight="158.0" prefWidth="501.0">
                <children>
-                  <Button fx:id="btnIndietro" mnemonicParsing="false" text="Indietro">
+                  <Button fx:id="btnIndietro" mnemonicParsing="false" onAction="#goIndietro" text="Indietro">
                      <HBox.margin>
                         <Insets left="20.0" top="110.0" />
                      </HBox.margin>
