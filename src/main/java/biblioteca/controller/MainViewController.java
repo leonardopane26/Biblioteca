@@ -41,6 +41,7 @@ import javafx.stage.Stage;
 public class MainViewController implements Initializable {
     
     private GestoreBiblioteca gestore;
+    private String vistaCorrente = "LIBRI";
     
     @FXML
     private Button btnLibri;
@@ -90,13 +91,22 @@ public class MainViewController implements Initializable {
             return row;
         });
         
+        txtRicerca.textProperty().addListener((obs, vecchioValore, nuovoValore) -> {
+            filtraTabella(nuovoValore.toLowerCase());
+        });
+        
         javafx.application.Platform.runLater(() -> {
             mostraLibri(null);
         });
+        
+       
     }    
 
     @FXML
     private void mostraUtenti(ActionEvent event) {
+        vistaCorrente = "UTENTI";
+        txtRicerca.clear();
+        
         tabellaPrincipale.getColumns().clear();
         
         TableColumn<Object , String> colMatricola = new TableColumn<>("Matricola");
@@ -125,6 +135,9 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void mostraLibri(ActionEvent event) {
+        vistaCorrente = "LIBRI";
+        txtRicerca.clear();
+        
         tabellaPrincipale.getColumns().clear();
         
         TableColumn<Object , String> colTitolo = new TableColumn<>("Titolo");
@@ -163,6 +176,9 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void mostraPrestitiAttivi(ActionEvent event) {
+        vistaCorrente = "PRESTITI";
+        txtRicerca.clear();
+        
         tabellaPrincipale.getColumns().clear();
         
         TableColumn<Object , String> colMatricola = new TableColumn<>("Matricola");
@@ -277,6 +293,44 @@ public class MainViewController implements Initializable {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    
+    private void filtraTabella(String query) {
+        if (query == null || query.isEmpty()) {
+            if (vistaCorrente.equals("LIBRI")) tabellaPrincipale.getItems().setAll(gestore.getListaLibri());
+            else if (vistaCorrente.equals("UTENTI")) tabellaPrincipale.getItems().setAll(gestore.getListaUtenti());
+            else tabellaPrincipale.getItems().setAll(gestore.getListaPrestiti());
+            return;
+        }
+
+        switch (vistaCorrente) {
+            case "LIBRI":
+                List<Libro> libriFiltrati = gestore.getListaLibri().stream()
+                    .filter(l -> l.getTitolo().toLowerCase().contains(query) || 
+                                 l.getIsbn().contains(query) ||
+                                 l.getAutoriFormattati().toLowerCase().contains(query))
+                    .collect(java.util.stream.Collectors.toList());
+                tabellaPrincipale.getItems().setAll(libriFiltrati);
+                break;
+
+            case "UTENTI":
+                List<Utente> utentiFiltrati = gestore.getListaUtenti().stream()
+                    .filter(u -> u.getNome().toLowerCase().contains(query) || 
+                                 u.getCognome().toLowerCase().contains(query) || 
+                                 u.getMatricola().contains(query))
+                    .collect(java.util.stream.Collectors.toList());
+                tabellaPrincipale.getItems().setAll(utentiFiltrati);
+                break;
+
+            case "PRESTITI":
+                List<Prestito> prestitiFiltrati = gestore.getListaPrestiti().stream()
+                    .filter(p -> p.getUtente().getCognome().toLowerCase().contains(query) || 
+                                 p.getLibro().getTitolo().toLowerCase().contains(query) ||
+                                 p.getUtente().getMatricola().contains(query))
+                    .collect(java.util.stream.Collectors.toList());
+                tabellaPrincipale.getItems().setAll(prestitiFiltrati);
+                break;
         }
     }
     
