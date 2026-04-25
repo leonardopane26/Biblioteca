@@ -7,12 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="biblioteca.VistaUtenteController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controller.VistaUtenteController">
    <children>
       <VBox layoutY="1.0" prefHeight="550.0" prefWidth="500.0">
          <children>
-            <Button fx:id="btnIndietro" mnemonicParsing="false" text="Indietro">
+            <Button fx:id="btnIndietro" mnemonicParsing="false" onAction="#goIndietro" text="Indietro">
                <VBox.margin>
                   <Insets left="20.0" top="20.0" />
                </VBox.margin>
@@ -55,8 +54,9 @@
             <TableView fx:id="tabellaPrestitiUtente" prefHeight="200.0" prefWidth="500.0">
               <columns>
                 <TableColumn fx:id="colTitoloLibro" prefWidth="150.0" text="Titolo Libro" />
-                <TableColumn fx:id="colDataInizio" prefWidth="150.0" text="Data Inizio" />
-                  <TableColumn fx:id="colDataScadenza" prefWidth="150.0" text="Data Scadenza" />
+                <TableColumn fx:id="colCodiceIsbn" prefWidth="150.0" text="Codice Isbn" />
+                  <TableColumn fx:id="colDataInizio" prefWidth="150.0" text="Data inizio" />
+                  <TableColumn fx:id="colDataScadenza" prefWidth="75.0" text="Data scadenza" />
               </columns>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -67,12 +67,12 @@
             </TableView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btnElimina" alignment="BOTTOM_LEFT" mnemonicParsing="false" text="Elimina">
+                  <Button fx:id="btnElimina" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminaUtente" text="Elimina">
                      <HBox.margin>
                         <Insets left="20.0" top="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnModifica" mnemonicParsing="false" text="Modifica">
+                  <Button fx:id="btnModifica" mnemonicParsing="false" onAction="#modificaUtente" text="Modifica">
                      <HBox.margin>
                         <Insets left="310.0" top="30.0" />
                      </HBox.margin>
