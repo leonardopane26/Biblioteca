@@ -91,6 +91,12 @@ public class VistaPrestitoController implements Initializable {
         }
     }
     
+    @FXML
+    private void goIndietro(){
+        Stage stage = (Stage) lblTitoloLibroPrestato.getScene().getWindow();
+        stage.close();
+    }
+    
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);

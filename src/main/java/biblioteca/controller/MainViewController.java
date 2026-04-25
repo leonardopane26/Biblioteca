@@ -191,6 +191,8 @@ public class MainViewController implements Initializable {
                 Comparator.comparing(Prestito::getDataFine)
         ));
         
+        btnNuovoUtente.setVisible(false);
+        btnNuovoLibro.setVisible(false);
     }
     
     @FXML 

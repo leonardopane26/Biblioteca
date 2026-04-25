@@ -108,8 +108,10 @@ public class RegistraPrestitoController implements Initializable {
                mostraAlert(AlertType.INFORMATION, "PRESTITO FALLITO", "L'utente ha raggiunto il numero massimo di prestiti");
            }
        }else{
+            mostraAlert(AlertType.CONFIRMATION , "PRESTITO REGISTRATO CORRETTAMENTE", "Il prestito è stato inserito correttamente nel sistema");
             gestore.salvaStato();
-            mostraAlert(AlertType.CONFIRMATION , "PRESTITO REGISTRATO CORRETTAMENTE", "Il prestito è stato inserito correttamente nel sistema");   
+            Stage stage = (Stage) lblTitolo.getScene().getWindow();
+            stage.close();
        }
     }
     

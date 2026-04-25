@@ -125,9 +125,9 @@ public class RegistraRestituzioneController implements Initializable {
             gestore.restituisciLibro(prestito, dataRestituzione);
             gestore.salvaStato();
             mostraAlert(AlertType.INFORMATION , "RESTITUZIONE AVVENUTA CON SUCCESSO" , "Il libro è stato restituito correttamente.");
-        }
-        
-        
+            Stage stage = (Stage) lblTitolo.getScene().getWindow();
+            stage.close();
+        } 
     }
     
     public void setDatiPrestito(Prestito prestito){
