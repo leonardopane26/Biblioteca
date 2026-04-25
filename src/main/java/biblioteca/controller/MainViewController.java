@@ -82,6 +82,8 @@ public class MainViewController implements Initializable {
                         apriDettaglioLibro((Libro) selezionato);
                     }else if(selezionato instanceof Utente){
                         apriDettaglioUtente((Utente) selezionato);
+                    }else if(selezionato instanceof Prestito){
+                        apriDettaglioPrestito((Prestito) selezionato);
                     }
                 }
             });
@@ -305,16 +307,36 @@ public class MainViewController implements Initializable {
             Parent root = loader.load();
             
             VistaUtenteController controller = loader.getController();
-            
             controller.inizializzaDati(utente);
             
             Stage stage = new Stage();
-            stage.setTitle("Dettaglio Utente - " + utente.getNome() + utente.getCognome());
+            stage.setTitle("Dettaglio Utente - " + utente.getNome() + " " + utente.getCognome());
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
             tabellaPrincipale.getItems().setAll(gestore.getListaUtenti());
 
+            
+        }catch(IOException e){
+            e.printStackTrace();
+            mostraAlert(AlertType.ERROR , "Errore Caricamento" , "Impossibile aprire la vista dettagliata.");
+        }
+    }
+    
+    private void apriDettaglioPrestito(Prestito prestito){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/biblioteca/vistaPrestito.fxml"));
+            Parent root = loader.load();
+            
+            VistaPrestitoController controller = loader.getController();
+            controller.inizializzaDati(prestito);
+            
+            Stage stage = new Stage();
+            stage.setTitle("Dettaglio Prestito - " + prestito.getLibro().getTitolo() + " " + prestito.getLibro().getIsbn());
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+            tabellaPrincipale.getItems().setAll(gestore.getListaPrestiti());
             
         }catch(IOException e){
             e.printStackTrace();
