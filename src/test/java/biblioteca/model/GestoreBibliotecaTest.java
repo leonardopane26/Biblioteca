@@ -36,10 +36,12 @@ public class GestoreBibliotecaTest {
     
     @BeforeAll
     public static void setUpClass() {
+        System.out.println("Starting GestoreBibliotecaTest...");
     }
     
     @AfterAll
     public static void tearDownClass() {
+        System.out.println("Finished GestoreBibliotecaTest...");
     }
     
     @BeforeEach
@@ -53,7 +55,6 @@ public class GestoreBibliotecaTest {
         
         utente = new Utente("Leonardo" , "Pane" , "0612707333" , "leonardo@gmail.com");
         libro = new Libro("Nuovo Libro" , new ArrayList<>(Arrays.asList("autore")) , 2026 , "00001" , 1);
-        libro.setNumeroCopieDisponibili(1);
         
         gestore.aggiungiLibro(libro);
         gestore.registraUtente(utente);

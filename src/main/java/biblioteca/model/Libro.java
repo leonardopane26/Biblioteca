@@ -25,6 +25,7 @@ public class Libro {
         this.autori = autori;
         this.annoPubblicazione = annoPubblicazione;
         this.isbn = isbn;
+        this.numeroCopieDisponibili = numeroCopieTotali;
         this.numeroCopieTotali = numeroCopieTotali;
     }
     
