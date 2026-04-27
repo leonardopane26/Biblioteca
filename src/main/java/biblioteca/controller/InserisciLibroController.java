@@ -130,7 +130,7 @@ public class InserisciLibroController implements Initializable {
             stage.close();
 
         } catch (NumberFormatException e) {
-            mostraAlert(AlertType.ERROR, "ERRORE", "Anno o Copie devono essere numeri validi");
+            mostraAlert(AlertType.ERROR, "ERRORE", "L'anno deve essere in formato numerico.");
         }
     }
     

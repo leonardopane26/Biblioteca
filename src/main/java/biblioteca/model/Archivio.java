@@ -11,30 +11,24 @@ import java.util.*;
 
 public class Archivio {
     
-    // 1. Istanza unica (Singleton)
     private static Archivio instance = null;
 
-    // 2. Liste dei dati
     private List<Libro> listaLibri;
     private List<Utente> listaUtenti;
     private List<Prestito> listaPrestiti;
 
-    // 3. Costruttore privato
     private Archivio() {
         this.listaLibri = new ArrayList<>();
         this.listaUtenti = new ArrayList<>();
         this.listaPrestiti = new ArrayList<>();
     }
 
-    // 4. Metodo per ottenere l'istanza
     public static Archivio getInstance() {
         if (instance == null) {
             instance = new Archivio();
         }
         return instance;
     }
-
-    // --- METODI DI CARICAMENTO (LOAD) ---
 
     public void caricaLibri() throws IOException {
         listaLibri.clear();
@@ -83,18 +77,14 @@ public class Archivio {
             Utente ut = cercaUtentePerMatricola(dati[1]);
 
             if (lib != null && ut != null) {
-                // Leggiamo i dati dal CSV
                 LocalDate inizio = LocalDate.parse(dati[2]);
                 LocalDate fine = LocalDate.parse(dati[3]);
                 
-                // Gestiamo la data di restituzione effettiva (il 5° parametro)
                 LocalDate restituzione = null;
                 if (!dati[4].equals("null")) {
                     restituzione = LocalDate.parse(dati[4]);
                 }
 
-                // CHIAMATA AL COSTRUTTORE CON 5 PARAMETRI
-                // Adesso combacia con quello che richiede la tua classe Prestito!
                 Prestito p = new Prestito(lib, ut, inizio, fine, restituzione);
                 
                 listaPrestiti.add(p);
@@ -103,7 +93,6 @@ public class Archivio {
     }
 }
 
-    // --- METODO DI SALVATAGGIO UNICO (SAVE) ---
 
     public void salvaArchivio() throws IOException {
         salvaLibriCSV();
@@ -111,7 +100,6 @@ public class Archivio {
         salvaPrestitiCSV();
     }
 
-    // Metodi privati di supporto al salvataggio
     private void salvaLibriCSV() throws IOException {
         try (PrintWriter pw = new PrintWriter(new FileWriter("libri.csv"))) {
             for (Libro l : listaLibri) {
@@ -141,8 +129,6 @@ public class Archivio {
         }
     }
 
-    // --- METODI DI RICERCA E GESTIONE ---
-
     public Libro cercaLibroPerISBN(String isbn) {
         for (Libro l : listaLibri) {
             if (l.getIsbn().equals(isbn)) return l;
@@ -167,12 +153,10 @@ public class Archivio {
         return filtrati;
     }
 
-    // Getter classici per le liste (per le TableView)
     public List<Libro> getListaLibri() { return listaLibri; }
     public List<Utente> getListaUtenti() { return listaUtenti; }
     public List<Prestito> getListaPrestiti() { return listaPrestiti; }
     
-    // Metodi di aggiunta rapida
     public void aggiungiLibro(Libro l) {
         listaLibri.add(l); 
     }

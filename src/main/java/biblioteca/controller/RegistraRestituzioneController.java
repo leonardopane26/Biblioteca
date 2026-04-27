@@ -121,6 +121,8 @@ public class RegistraRestituzioneController implements Initializable {
             gestore.restituisciLibro(prestito, dataRestituzione);
             gestore.salvaStato();
             mostraAlert(AlertType.INFORMATION , "RESTITUZIONE IN RITARDO" , "Il libro è stato restituito in ritardo.");
+            Stage stage = (Stage) lblTitolo.getScene().getWindow();
+            stage.close();
         }else{
             gestore.restituisciLibro(prestito, dataRestituzione);
             gestore.salvaStato();
