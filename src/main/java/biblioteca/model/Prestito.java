@@ -19,7 +19,7 @@ public class Prestito {
     private LocalDate dataFine;
     private LocalDate dataRestituzioneEffettiva;
 
-    public Prestito(Libro libro, Utente utente, LocalDate dataInizio, LocalDate dataFine, LocalDate dataRestituzioneEffettiva) {
+    public Prestito(Libro libro, Utente utente, LocalDate dataInizio, LocalDate dataFine) {
         this.libro = libro;
         this.utente = utente;
         this.dataInizio = dataInizio;

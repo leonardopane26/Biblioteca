@@ -79,13 +79,8 @@ public class Archivio {
             if (lib != null && ut != null) {
                 LocalDate inizio = LocalDate.parse(dati[2]);
                 LocalDate fine = LocalDate.parse(dati[3]);
-                
-                LocalDate restituzione = null;
-                if (!dati[4].equals("null")) {
-                    restituzione = LocalDate.parse(dati[4]);
-                }
 
-                Prestito p = new Prestito(lib, ut, inizio, fine, restituzione);
+                Prestito p = new Prestito(lib, ut, inizio, fine);
                 
                 listaPrestiti.add(p);
             }

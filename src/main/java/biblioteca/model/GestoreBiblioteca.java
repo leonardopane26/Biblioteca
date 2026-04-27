@@ -120,7 +120,7 @@ public class GestoreBiblioteca {
         }
         
         if(l.getNumeroCopieDisponibili() > 0){
-            Prestito nuovo = new Prestito(l , u , inizio , scadenza , null);
+            Prestito nuovo = new Prestito(l , u , inizio , scadenza);
             archivio.getListaPrestiti().add(nuovo);
   
             l.setNumeroCopieDisponibili(l.getNumeroCopieDisponibili() - 1);
