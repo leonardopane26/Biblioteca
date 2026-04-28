@@ -32,13 +32,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class VistaUtenteController
+ * @brief Controller per la visualizzazione dettagliata del profilo di un utente.
+ * @details Gestisce la schermata di riepilogo che mostra i dati anagrafici di un utente 
+ * e la tabella dei libri attualmente in suo possesso. Include la logica per la 
+ * cancellazione sicura (inibita se ci sono prestiti attivi) e l'accesso alla modifica.
  * @author lpane
+ * @date 2026-04-18
  */
 public class VistaUtenteController implements Initializable {
     
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
+    /** @brief L'utente di cui si stanno visualizzando i dettagli. */
     private Utente utenteCorrente;
     
     @FXML
@@ -66,12 +72,18 @@ public class VistaUtenteController implements Initializable {
     @FXML
     private Button btnModifica;
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public VistaUtenteController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializza la tabella dei prestiti utente.
+     * @details Configura le colonne per estrarre i dati dal modello `Libro` 
+     * annidato nell'oggetto `Prestito` tramite `SimpleStringProperty`.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,6 +99,12 @@ public class VistaUtenteController implements Initializable {
         colDataScadenza.setCellValueFactory(new PropertyValueFactory<>("dataFine"));
     }    
     
+    /**
+     * @brief Carica i dati dell'utente nell'interfaccia.
+     * @param utente L'istanza dell'utente da visualizzare.
+     * @details Popola le label informative e interroga il gestore per ottenere 
+     * solo i prestiti attivi legati alla matricola dell'utente.
+     */
     public void inizializzaDati(Utente utente){
         this.utenteCorrente = utente;
         
@@ -99,12 +117,22 @@ public class VistaUtenteController implements Initializable {
         tabellaPrestitiUtente.getItems().setAll(libri);
     }
     
+    /**
+     * @brief Chiude lo stage corrente.
+     */
     @FXML
     private void goIndietro(){
         Stage stage = (Stage) lblMatricolaUtente.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * @brief Gestisce il processo di rimozione di un utente.
+     * @param event Pressione del tasto elimina.
+     * @details Viene richiesta una conferma esplicita. Se l'utente ha ancora 
+     * dei libri in prestito (lista prestiti non vuota), l'operazione viene 
+     * bloccata con un messaggio di errore per garantire l'integrità del sistema.
+     */
     @FXML
     private void eliminaUtente(ActionEvent event){
  
@@ -133,6 +161,13 @@ public class VistaUtenteController implements Initializable {
         
     }
     
+    /**
+     * @brief Apre la finestra di modifica dell'anagrafica utente.
+     * @param event Pressione del tasto modifica.
+     * @details Carica il controller `InserisciUtenteController` e passa 
+     * l'oggetto utente corrente per popolare i campi. Al ritorno, 
+     * aggiorna i dati visualizzati nella vista dettaglio.
+     */
     @FXML
     private void modificaUtente(ActionEvent event) {
         try {
@@ -155,7 +190,12 @@ public class VistaUtenteController implements Initializable {
         }
     }
 
-    
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
