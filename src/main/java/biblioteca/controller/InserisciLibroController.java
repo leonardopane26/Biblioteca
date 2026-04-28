@@ -32,7 +32,7 @@ import javafx.stage.Stage;
  */
 public class InserisciLibroController implements Initializable {
     
-    /** @brief Riferimento al gestore logico. */
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
     /** @brief Riferimento al libro in fase di modifica. Se null, la modalità è "Inserimento". */
     private Libro libroInModifica = null;
