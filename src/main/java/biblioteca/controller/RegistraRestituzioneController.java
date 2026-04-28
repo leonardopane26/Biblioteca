@@ -24,13 +24,19 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class RegistraRestituzioneController
+ * @brief Controller per la gestione del rientro dei libri in biblioteca.
+ * @details Gestisce l'interfaccia FXML che permette di chiudere un prestito attivo. 
+ * La classe implementa una logica di filtraggio dinamico tra le ComboBox "Utente" e "Libro" 
+ * per facilitare l'individuazione del prestito corretto e gestisce la notifica di eventuali ritardi.
  * @author lpane
+ * @date 2026-04-18
  */
 public class RegistraRestituzioneController implements Initializable {
     
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
+    /** @brief Riferimento al prestito specifico selezionato per la restituzione. */
     private Prestito prestitoScelto;
     
     @FXML
@@ -46,12 +52,20 @@ public class RegistraRestituzioneController implements Initializable {
     @FXML
     private Button btnConferma;
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public RegistraRestituzioneController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializza i componenti e imposta i listener per il filtraggio incrociato.
+     * @details All'avvio, le ComboBox vengono popolate con i dati dei soli prestiti attivi.
+     * Vengono aggiunti dei listener sulle proprietà di selezione:
+     * - Se si seleziona un utente, la lista dei libri viene filtrata mostrando solo quelli in suo possesso.
+     * - Se si seleziona un libro, viene mostrato solo l'utente (o gli utenti) che lo hanno in prestito.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -95,12 +109,25 @@ public class RegistraRestituzioneController implements Initializable {
         });
     }
     
+    /**
+     * @brief Chiude la finestra senza registrare la restituzione.
+     * @param event Click sul pulsante annulla.
+     */
     @FXML
     private void annullaRestituzione(ActionEvent event){
         Stage stage = (Stage) lblTitolo.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * @brief Valida i dati e processa la restituzione del libro.
+     * @param event Click sul pulsante conferma.
+     * @details Il metodo recupera il prestito corrispondente alla coppia Utente-Libro selezionata.
+     * Effettua i seguenti controlli:
+     * 1. La data di restituzione non può essere antecedente alla data di inizio prestito.
+     * 2. Se la data di restituzione è successiva alla scadenza prevista, avvisa l'amministratore del ritardo.
+     * 3. Aggiorna lo stato del libro (incrementa copie disponibili) e salva l'archivio.
+     */
     @FXML
     private void confermaRestituzione(ActionEvent event){
         String matricolaScelta = cmbUtente.getValue();
@@ -132,6 +159,10 @@ public class RegistraRestituzioneController implements Initializable {
         } 
     }
     
+    /**
+     * @brief Pre-imposta i dati se la finestra viene aperta da una selezione specifica.
+     * @param prestito Il prestito da chiudere.
+     */
     public void setDatiPrestito(Prestito prestito){
         LocalDate df = LocalDate.now();
         cmbUtente.setValue(prestito.getUtente().getMatricola());
@@ -139,6 +170,12 @@ public class RegistraRestituzioneController implements Initializable {
         dpFine.setValue(df);
     }
     
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
