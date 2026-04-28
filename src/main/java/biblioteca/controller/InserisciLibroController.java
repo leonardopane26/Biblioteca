@@ -22,13 +22,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class InserisciLibroController
+ * @brief Controller per la gestione della finestra di inserimento e modifica libri.
+ * @details Questa classe gestisce l'interfaccia FXML per aggiungere nuovi libri al catalogo
+ * o aggiornare i dati di un libro già esistente. Include controlli di validazione per ISBN,
+ * formato dell'anno e coerenza del numero di copie.
  * @author lpane
+ * @date 2026-04-18
  */
 public class InserisciLibroController implements Initializable {
     
+    /** @brief Riferimento al gestore logico. */
     private GestoreBiblioteca gestore;
+    /** @brief Riferimento al libro in fase di modifica. Se null, la modalità è "Inserimento". */
     private Libro libroInModifica = null;
     
     @FXML
@@ -48,24 +54,42 @@ public class InserisciLibroController implements Initializable {
     @FXML
     private Label lblCopieTotali; 
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public InserisciLibroController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializzatore JavaFX.
+     * @details Metodo richiamato automaticamente dopo il caricamento del file FXML.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    
+    /**
+     * @brief Chiude la finestra senza salvare le modifiche.
+     * @param event L'evento scatenato dal click sul tasto annulla.
+     */
     @FXML
     private void annullaInserimento(ActionEvent event) {
         Stage stage = (Stage) txtTitolo.getScene().getWindow();
         stage.close();
     }
-
+    
+    /**
+     * @brief Valida i dati e conferma l'inserimento o la modifica del libro.
+     * @param event L'evento scatenato dal click sul tasto conferma.
+     * @details Il metodo esegue i seguenti controlli:
+     * - Campi obbligatori non vuoti.
+     * - ISBN numerico e non duplicato (in caso di nuovo inserimento).
+     * - Formato dell'anno valido.
+     * - In caso di modifica, il numero di copie totali non può essere inferiore ai libri attualmente in prestito.
+     */
     @FXML
     private void confermaInserimento(ActionEvent event) {
         String titolo = txtTitolo.getText();
@@ -134,6 +158,12 @@ public class InserisciLibroController implements Initializable {
         }
     }
     
+    /**
+     * @brief Configura il controller per la modalità modifica.
+     * @param libro Il libro i cui dati devono essere pre-caricati nei campi di testo.
+     * @details Rende visibili i campi per la gestione delle copie e disabilita la modifica 
+     * dell'ISBN (chiave primaria).
+     */
     public void setLibroDaModificare(Libro libro) {
         this.libroInModifica = libro;
         lblCopieTotali.setVisible(true);
@@ -149,6 +179,12 @@ public class InserisciLibroController implements Initializable {
         txtCopieTotali.setText(String.valueOf(libro.getNumeroCopieTotali()));
     }
     
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
