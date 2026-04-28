@@ -25,12 +25,17 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class RegistraPrestitoController
+ * @brief Controller per la registrazione di un nuovo prestito.
+ * @details Gestisce l'interfaccia FXML che permette di associare un libro a un utente. 
+ * Include la logica per popolare le ComboBox con i dati esistenti e convalida la 
+ * coerenza delle date e la disponibilità effettiva del libro.
  * @author lpane
+ * @date 2026-04-18
  */
 public class RegistraPrestitoController implements Initializable {
     
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
     
     @FXML
@@ -48,12 +53,18 @@ public class RegistraPrestitoController implements Initializable {
     @FXML
     private Button btnConferma;
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public RegistraPrestitoController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializza la finestra popolando i menu a tendina.
+     * @details Recupera tramite Stream API le matricole di tutti gli utenti e 
+     * gli ISBN di tutti i libri presenti nel sistema per permetterne la selezione.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,14 +79,24 @@ public class RegistraPrestitoController implements Initializable {
         cmbLibro.getItems().setAll(codiciIsbn);
     }
     
-
-
+    /**
+     * @brief Chiude lo stage senza salvare.
+     */
     @FXML
     private void annullaInserimento(ActionEvent event){
         Stage stage = (Stage) lblTitolo.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * @brief Registra il prestito dopo aver verificato i vincoli.
+     * @param event Click sul pulsante di conferma.
+     * @details Il metodo esegue i seguenti controlli di sicurezza:
+     * 1. Verifica che tutti i campi siano stati selezionati.
+     * 2. Controlla che la data di fine non sia precedente a quella di inizio.
+     * 3. Interroga il `GestoreBiblioteca` per verificare se ci sono copie disponibili 
+     * e se l'utente non ha superato il limite massimo di prestiti.
+     */
     @FXML
     private void confermaInserimento(ActionEvent event){
        String matricola = cmbUtente.getValue();
@@ -115,7 +136,12 @@ public class RegistraPrestitoController implements Initializable {
        }
     }
     
-    
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
