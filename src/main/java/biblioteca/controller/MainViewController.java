@@ -34,13 +34,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class MainViewController
+ * @brief Controller principale dell'applicazione.
+ * @details Gestisce la finestra principale della biblioteca. Si occupa della visualizzazione 
+ * dinamica delle tabelle (Libri, Utenti, Prestiti), della ricerca globale e dell'apertura 
+ * delle finestre per l'inserimento o la visualizzazione dei dettagli.
  * @author lpane
+ * @date 2026-04-18
  */
 public class MainViewController implements Initializable {
     
+    /** @brief Riferimento al gestore della biblioteca. */
     private GestoreBiblioteca gestore;
+    /** @brief Stato attuale della tabella (può essere "LIBRI", "UTENTI" o "PRESTITI"). */
     private String vistaCorrente = "LIBRI";
     
     @FXML
@@ -62,12 +68,18 @@ public class MainViewController implements Initializable {
     @FXML
     private Button btnNuovoLibro;
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Istanzia il GestoreBiblioteca per interfacciarsi con i dati.
+     */
     public MainViewController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Metodo di inizializzazione di JavaFX.
+     * @details Carica i dati iniziali dall'archivio, configura la RowFactory per gestire 
+     * il colore dei ritardi (rosso) e il doppio click, e imposta il listener per la ricerca.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -116,7 +128,11 @@ public class MainViewController implements Initializable {
         
        
     }    
-
+    
+    /**
+     * @brief Configura la tabella per mostrare la lista degli utenti.
+     * @param event Evento scatenato dal click sul pulsante Utenti.
+     */
     @FXML
     private void mostraUtenti(ActionEvent event) {
         vistaCorrente = "UTENTI";
@@ -147,7 +163,11 @@ public class MainViewController implements Initializable {
         btnNuovoUtente.setVisible(true);
         btnNuovoLibro.setVisible(false);
     }
-
+    
+    /**
+     * @brief Configura la tabella per mostrare il catalogo libri.
+     * @param event Evento scatenato dal click sul pulsante Libri.
+     */
     @FXML
     private void mostraLibri(ActionEvent event) {
         vistaCorrente = "LIBRI";
@@ -188,7 +208,11 @@ public class MainViewController implements Initializable {
         btnNuovoLibro.setVisible(true);
         
     }
-
+    
+    /**
+     * @brief Configura la tabella per mostrare i prestiti correnti.
+     * @param event Evento click sul pulsante Prestiti Attivi.
+     */
     @FXML
     private void mostraPrestitiAttivi(ActionEvent event) {
         vistaCorrente = "PRESTITI";
@@ -226,6 +250,7 @@ public class MainViewController implements Initializable {
         btnNuovoLibro.setVisible(false);
     }
     
+    /** @brief Apre il popup per l'inserimento di un utente. */
     @FXML 
     private void goToInserisciUtente(ActionEvent event){
          try {
@@ -248,6 +273,7 @@ public class MainViewController implements Initializable {
         
     }
     
+    /** @brief Apre il popup per l'inserimento di un libro. */
     @FXML
     private void goToInserisciLibro(ActionEvent event){
             try {
@@ -269,6 +295,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /** @brief Apre il popup per registrare un prestito. */
     @FXML
     private void goToRegistraPrestito(ActionEvent event){
         try {
@@ -290,6 +317,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /** @brief Apre il popup per registrare una restituzione. */
     @FXML
     private void goToRegistraRestituzione(ActionEvent event){
         try {
@@ -311,6 +339,10 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /**
+     * @brief Gestisce il filtraggio in tempo reale dei dati nelle tabelle.
+     * @param query Stringa inserita dall'utente nella barra di ricerca.
+     */
     private void filtraTabella(String query) {
         if (query == null || query.isEmpty()) {
             if (vistaCorrente.equals("LIBRI")) tabellaPrincipale.getItems().setAll(gestore.getListaLibri());
@@ -349,6 +381,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /** @brief Apre la vista dettagliata di un libro. */
     private void apriDettaglioLibro(Libro libro) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/biblioteca/vistaLibro.fxml"));
@@ -372,6 +405,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /** @brief Apre la vista dettagliata di un utente. */
     private void apriDettaglioUtente(Utente utente){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/biblioteca/vistaUtente.fxml"));
@@ -394,6 +428,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /** @brief Apre la vista dettagliata di un prestito. */
     private void apriDettaglioPrestito(Prestito prestito){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/biblioteca/vistaPrestito.fxml"));
@@ -415,6 +450,12 @@ public class MainViewController implements Initializable {
         }
     }
     
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
