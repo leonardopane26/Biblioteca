@@ -74,7 +74,22 @@ public class MainViewController implements Initializable {
         gestore.caricaDatiIniziali();
         
         tabellaPrincipale.setRowFactory(tv -> {
-            TableRow<Object> row = new TableRow<>();
+            TableRow<Object> row = new TableRow<Object>(){
+                @Override
+                protected void updateItem(Object item, boolean empty){
+                    super.updateItem(item, empty);
+                    
+                    setStyle("");
+                    
+                    if(item instanceof Prestito && !empty){
+                        Prestito p = (Prestito) item;
+                        
+                        if(!p.isRestituito() && p.getDataFine().isBefore(java.time.LocalDate.now())){
+                            setStyle("-fx-background-color: #f28d8d;");
+                        }
+                    }
+                }
+            };
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (!row.isEmpty())) {
                     Object selezionato = row.getItem();
