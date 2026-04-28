@@ -24,13 +24,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class VistaPrestitoController
+ * @brief Controller per la visualizzazione dei dettagli di un prestito specifico.
+ * @details Questa classe gestisce la finestra di riepilogo di un prestito selezionato. 
+ * Mostra le informazioni incrociate tra Libro e Utente e permette di avviare il 
+ * processo di restituzione caricando il relativo controller secondario.
  * @author lpane
+ * @date 2026-04-18
  */
 public class VistaPrestitoController implements Initializable {
     
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
+    /** @brief Il prestito correntemente visualizzato. */
     private Prestito prestitoCorrente = null;
     
     @FXML
@@ -46,19 +52,29 @@ public class VistaPrestitoController implements Initializable {
     @FXML
     private Button btnRestituisci;
     
-    
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public VistaPrestitoController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializzatore JavaFX.
+     * @details Metodo richiamato automaticamente dopo il caricamento del file FXML.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
+    /**
+     * @brief Inserisce i dati del prestito nei componenti grafici.
+     * @param prestito L'oggetto Prestito da cui estrarre le informazioni.
+     * @details Popola le label della vista con il titolo del libro, gli autori, 
+     * la matricola dell'utente e la data di scadenza prevista.
+     */
     public void inizializzaDati(Prestito prestito){
         this.prestitoCorrente = prestito;
         
@@ -68,6 +84,14 @@ public class VistaPrestitoController implements Initializable {
         lblDataLibroPrestato.setText(prestito.getDataFine().toString());
     }
     
+    /**
+     * @brief Apre il modulo per registrare la restituzione del libro.
+     * @param event Evento scatenato dal click sul tasto "Restituisci".
+     * @details Carica il file FXML `registraRestituzione2.fxml` e passa l'oggetto 
+     * `prestitoCorrente` al controller `RegistraRestituzioneController`. 
+     * La finestra viene aperta in modalità `APPLICATION_MODAL` per bloccare 
+     * l'interazione con le finestre sottostanti fino alla chiusura del modulo.
+     */
     @FXML
     private void apriFinestraRestituzione(ActionEvent event) {
             try {
@@ -91,12 +115,21 @@ public class VistaPrestitoController implements Initializable {
         }
     }
     
+    /**
+     * @brief Chiude la finestra di dettaglio.
+     */
     @FXML
     private void goIndietro(){
         Stage stage = (Stage) lblTitoloLibroPrestato.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
