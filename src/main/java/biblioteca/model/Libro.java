@@ -79,11 +79,15 @@ public class Libro {
    
     public void incrementaCopie(){
         this.numeroCopieTotali++;
+        this.numeroCopieDisponibili++;
     }
     
     public void decrementaCopie(){
         if (this.numeroCopieTotali > 0) {
-        this.numeroCopieTotali--;
+            this.numeroCopieTotali--;
+        if(this.numeroCopieDisponibili > 0){
+            this.numeroCopieDisponibili--;
+        }
         }
     }
     
