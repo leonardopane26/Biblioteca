@@ -9,6 +9,9 @@ import biblioteca.model.GestoreBiblioteca;
 import biblioteca.model.Utente;
 import biblioteca.model.Libro;
 import biblioteca.model.Prestito;
+import biblioteca.utils.LibroComparator;
+import biblioteca.utils.PrestitoComparator;
+import biblioteca.utils.UtenteComparator;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -157,7 +160,7 @@ public class MainViewController implements Initializable {
         colEmail.setMaxWidth(1f * Integer.MAX_VALUE * 30);
         
         tabellaPrincipale.getColumns().addAll(colMatricola , colNome , colCognome , colEmail);
-        tabellaPrincipale.getItems().setAll(gestore.getListaUtenti());
+        tabellaPrincipale.getItems().setAll(gestore.getUtentiOrdinati(new UtenteComparator()));
         
         btnNuovoUtente.setText("Inserisci nuovo Utente");
         btnNuovoUtente.setVisible(true);
@@ -201,7 +204,7 @@ public class MainViewController implements Initializable {
         
         tabellaPrincipale.getColumns().addAll(colTitolo , colAutori , colAnno , colIsbn , colCopieTotali, colCopieDisponibili);
 
-        tabellaPrincipale.getItems().setAll(gestore.getListaLibri());
+        tabellaPrincipale.getItems().setAll(gestore.getCatalogoOrdinato(new LibroComparator()));
         
         btnNuovoLibro.setText("Inserisci nuovo libro");
         btnNuovoUtente.setVisible(false);
@@ -242,9 +245,7 @@ public class MainViewController implements Initializable {
         
         tabellaPrincipale.getColumns().addAll(colMatricola , colIsbn , colDataInizio , colDataFine);
 
-        tabellaPrincipale.getItems().setAll(gestore.getPrestitiOrdinati(
-                Comparator.comparing(Prestito::getDataFine)
-        ));
+        tabellaPrincipale.getItems().setAll(gestore.getPrestitiOrdinati(new PrestitoComparator()));
         
         btnNuovoUtente.setVisible(false);
         btnNuovoLibro.setVisible(false);
