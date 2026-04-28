@@ -35,13 +35,20 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * @class VistaLibroController
+ * @brief Controller per la visualizzazione dettagliata di un singolo libro.
+ * @details Questa classe gestisce una vista di approfondimento che mostra i dettagli 
+ * completi di un libro (ISBN, autori, copie) e una tabella dei prestiti attivi 
+ * relativi esclusivamente a quel volume. Permette inoltre l'avvio della modifica o 
+ * l'eliminazione del libro previa verifica dei vincoli.
  * @author lpane
+ * @date 2026-04-18
  */
 public class VistaLibroController implements Initializable {
     
+    /** @brief Riferimento al gestore della logica di business. */
     private GestoreBiblioteca gestore;
+    /** @brief Il libro attualmente visualizzato. */
     private Libro libroCorrente;
     
     @FXML
@@ -73,12 +80,19 @@ public class VistaLibroController implements Initializable {
     @FXML
     private Button btnModifica;
     
+    /**
+     * @brief Costruttore del controller.
+     * @details Inizializza l'istanza del GestoreBiblioteca.
+     */
     public VistaLibroController(){
         this.gestore = new GestoreBiblioteca();
     }
     
     /**
-     * Initializes the controller class.
+     * @brief Inizializza la struttura della tabella dei prestiti.
+     * @details Configura le colonne della tabella utilizzando sia PropertyValueFactory 
+     * che SimpleStringProperty per accedere ai dati annidati dell'oggetto Utente 
+     * associato al Prestito.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -98,6 +112,13 @@ public class VistaLibroController implements Initializable {
         colDataFine.setCellValueFactory(new PropertyValueFactory<>("dataFine"));
     }    
     
+    /**
+     * @brief Popola l'interfaccia con i dati del libro selezionato.
+     * @param libro L'istanza del libro da visualizzare.
+     * @details Il metodo aggiorna le label testuali e filtra la lista globale dei 
+     * prestiti per mostrare nella tabella solo gli utenti che hanno attualmente 
+     * in mano una copia di questo specifico libro (tramite confronto ISBN).
+     */
     public void inizializzaDati(Libro libro){
         this.libroCorrente = libro;
         
@@ -114,12 +135,23 @@ public class VistaLibroController implements Initializable {
         tabellaLibroPrestato.getItems().setAll(possessori);
     }
     
+    /**
+     * @brief Chiude la vista di dettaglio e torna alla schermata precedente.
+     */
     @FXML
     private void goIndietro(){
         Stage stage = (Stage) lblTitoloLibro.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * @brief Gestisce l'eliminazione del libro dal sistema.
+     * @param event Evento scatenato dal click del tasto elimina.
+     * @details L'eliminazione è protetta da due livelli di controllo:
+     * 1. **Conferma Utente**: Un alert di tipo CONFIRMATION richiede l'autorizzazione.
+     * 2. **Integrità Dati**: Il libro non può essere eliminato se il numero di copie 
+     * disponibili è inferiore al totale (ovvero se ci sono prestiti ancora aperti).
+     */
     @FXML
     private void eliminaLibro(ActionEvent event){
  
@@ -148,6 +180,13 @@ public class VistaLibroController implements Initializable {
         
     }
     
+    /**
+     * @brief Apre la finestra di modifica per il libro corrente.
+     * @param event Evento scatenato dal click del tasto modifica.
+     * @details Carica il loader FXML di `InserisciLibroController` in modalità 
+     * modale, passa il libro corrente per la pre-compilazione dei campi e 
+     * al termine dell'operazione aggiorna la vista con i nuovi dati.
+     */
     @FXML
     private void modificaLibro(ActionEvent event) {
         try {
@@ -171,7 +210,12 @@ public class VistaLibroController implements Initializable {
         }
     }
 
-    
+    /**
+     * @brief Visualizza un messaggio di avviso all'utente.
+     * @param tipo Il tipo di alert (ERROR, INFO, etc).
+     * @param titolo Titolo della finestra.
+     * @param contenuto Testo del messaggio.
+     */
     private void mostraAlert(Alert.AlertType tipo, String titolo, String contenuto) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titolo);
