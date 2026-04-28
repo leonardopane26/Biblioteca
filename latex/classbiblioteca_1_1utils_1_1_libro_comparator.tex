@@ -1,0 +1,57 @@
+\doxysection{biblioteca.\+utils.\+Libro\+Comparator Class Reference}
+\hypertarget{classbiblioteca_1_1utils_1_1_libro_comparator}{}\label{classbiblioteca_1_1utils_1_1_libro_comparator}\index{biblioteca.utils.LibroComparator@{biblioteca.utils.LibroComparator}}
+
+
+Fornisce un criterio di ordinamento per gli oggetti di tipo Libro.  
+
+
+Inheritance diagram for biblioteca.\+utils.\+Libro\+Comparator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1utils_1_1_libro_comparator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbiblioteca_1_1utils_1_1_libro_comparator_ac3573fa378f72f632a27d107a8cfb7de}{compare}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} l1, \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} l2)
+\begin{DoxyCompactList}\small\item\em Confronta due libri in base al titolo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fornisce un criterio di ordinamento per gli oggetti di tipo Libro. 
+
+Implementa l\textquotesingle{}interfaccia Comparator per permettere l\textquotesingle{}ordinamento alfabetico dei libri in base al titolo, ignorando la differenza tra maiuscole e minuscole. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1utils_1_1_libro_comparator_ac3573fa378f72f632a27d107a8cfb7de}\index{biblioteca.utils.LibroComparator@{biblioteca.utils.LibroComparator}!compare@{compare}}
+\index{compare@{compare}!biblioteca.utils.LibroComparator@{biblioteca.utils.LibroComparator}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1utils_1_1_libro_comparator_ac3573fa378f72f632a27d107a8cfb7de} 
+int biblioteca.\+utils.\+Libro\+Comparator.\+compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{l1}{, }\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{l2}{}\end{DoxyParamCaption})}
+
+
+
+Confronta due libri in base al titolo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l1} & Il primo libro da confrontare. \\
+\hline
+{\em l2} & Il secondo libro da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un intero negativo, zero o positivo se il titolo del primo libro è rispettivamente precedente, uguale o successivo a quello del secondo in ordine alfabetico.
+\end{DoxyReturn}
+Utilizza il metodo {\ttfamily compare\+To\+Ignore\+Case} per garantire che l\textquotesingle{}ordinamento sia naturale (es. \textquotesingle{}a\textquotesingle{} e \textquotesingle{}A\textquotesingle{} vengono trattate allo stesso modo). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/utils/\mbox{\hyperlink{_libro_comparator_8java}{Libro\+Comparator.\+java}}\end{DoxyCompactItemize}

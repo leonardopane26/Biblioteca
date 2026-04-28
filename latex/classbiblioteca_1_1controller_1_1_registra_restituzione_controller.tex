@@ -1,0 +1,83 @@
+\doxysection{biblioteca.\+controller.\+Registra\+Restituzione\+Controller Class Reference}
+\hypertarget{classbiblioteca_1_1controller_1_1_registra_restituzione_controller}{}\label{classbiblioteca_1_1controller_1_1_registra_restituzione_controller}\index{biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}}
+
+
+Controller per la gestione del rientro dei libri in biblioteca.  
+
+
+Inheritance diagram for biblioteca.\+controller.\+Registra\+Restituzione\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1controller_1_1_registra_restituzione_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_a07460a129f9c446f628eacef7d9f3fd8}{Registra\+Restituzione\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore del controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa54c3e894344e51ec29b6201c6baffed}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Inizializza i componenti e imposta i listener per il filtraggio incrociato. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa9913d48ee8d26962be60873ead235a4}{set\+Dati\+Prestito}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} prestito)
+\begin{DoxyCompactList}\small\item\em Pre-\/imposta i dati se la finestra viene aperta da una selezione specifica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller per la gestione del rientro dei libri in biblioteca. 
+
+Gestisce l\textquotesingle{}interfaccia FXML che permette di chiudere un prestito attivo. La classe implementa una logica di filtraggio dinamico tra le Combo\+Box "{}\+Utente"{} e "{}\+Libro"{} per facilitare l\textquotesingle{}individuazione del prestito corretto e gestisce la notifica di eventuali ritardi. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_a07460a129f9c446f628eacef7d9f3fd8}\index{biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}!RegistraRestituzioneController@{RegistraRestituzioneController}}
+\index{RegistraRestituzioneController@{RegistraRestituzioneController}!biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}}
+\doxysubsubsection{\texorpdfstring{RegistraRestituzioneController()}{RegistraRestituzioneController()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_a07460a129f9c446f628eacef7d9f3fd8} 
+biblioteca.\+controller.\+Registra\+Restituzione\+Controller.\+Registra\+Restituzione\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del controller. 
+
+Inizializza l\textquotesingle{}istanza del Gestore\+Biblioteca. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa54c3e894344e51ec29b6201c6baffed}\index{biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}!initialize@{initialize}}
+\index{initialize@{initialize}!biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa54c3e894344e51ec29b6201c6baffed} 
+void biblioteca.\+controller.\+Registra\+Restituzione\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza i componenti e imposta i listener per il filtraggio incrociato. 
+
+All\textquotesingle{}avvio, le Combo\+Box vengono popolate con i dati dei soli prestiti attivi. Vengono aggiunti dei listener sulle proprietà di selezione\+:
+\begin{DoxyItemize}
+\item Se si seleziona un utente, la lista dei libri viene filtrata mostrando solo quelli in suo possesso.
+\item Se si seleziona un libro, viene mostrato solo l\textquotesingle{}utente (o gli utenti) che lo hanno in prestito. 
+\end{DoxyItemize}\Hypertarget{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa9913d48ee8d26962be60873ead235a4}\index{biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}!setDatiPrestito@{setDatiPrestito}}
+\index{setDatiPrestito@{setDatiPrestito}!biblioteca.controller.RegistraRestituzioneController@{biblioteca.controller.RegistraRestituzioneController}}
+\doxysubsubsection{\texorpdfstring{setDatiPrestito()}{setDatiPrestito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_registra_restituzione_controller_aa9913d48ee8d26962be60873ead235a4} 
+void biblioteca.\+controller.\+Registra\+Restituzione\+Controller.\+set\+Dati\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{prestito}{}\end{DoxyParamCaption})}
+
+
+
+Pre-\/imposta i dati se la finestra viene aperta da una selezione specifica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prestito} & Il prestito da chiudere. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/controller/\mbox{\hyperlink{_registra_restituzione_controller_8java}{Registra\+Restituzione\+Controller.\+java}}\end{DoxyCompactItemize}

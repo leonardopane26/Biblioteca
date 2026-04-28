@@ -1,0 +1,77 @@
+\doxysection{biblioteca.\+app.\+App Class Reference}
+\hypertarget{classbiblioteca_1_1app_1_1_app}{}\label{classbiblioteca_1_1app_1_1_app}\index{biblioteca.app.App@{biblioteca.app.App}}
+
+
+Classe principale dell\textquotesingle{}applicazione (Entry Point).  
+
+
+Inheritance diagram for biblioteca.\+app.\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1app_1_1_app}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1app_1_1_app_a72d5002e26339b241f160167c6c18163}{start}} (Stage stage)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Metodo di avvio del ciclo di vita Java\+FX. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classbiblioteca_1_1app_1_1_app_aeadf0ceda754eef667a41556951d6701}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Main method classico di Java. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe principale dell\textquotesingle{}applicazione (Entry Point). 
+
+Estende la classe {\ttfamily javafx.\+application.\+Application} e gestisce l\textquotesingle{}avvio del framework Java\+FX, l\textquotesingle{}impostazione dello Stage principale e il caricamento della prima scena (Main View). \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/14 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1app_1_1_app_aeadf0ceda754eef667a41556951d6701}\index{biblioteca.app.App@{biblioteca.app.App}!main@{main}}
+\index{main@{main}!biblioteca.app.App@{biblioteca.app.App}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1app_1_1_app_aeadf0ceda754eef667a41556951d6701} 
+static void biblioteca.\+app.\+App.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Main method classico di Java. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Argomenti da riga di comando.\\
+\hline
+\end{DoxyParams}
+Invoca il metodo {\ttfamily launch()} di Java\+FX per far partire l\textquotesingle{}applicazione. \Hypertarget{classbiblioteca_1_1app_1_1_app_a72d5002e26339b241f160167c6c18163}\index{biblioteca.app.App@{biblioteca.app.App}!start@{start}}
+\index{start@{start}!biblioteca.app.App@{biblioteca.app.App}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1app_1_1_app_a72d5002e26339b241f160167c6c18163} 
+void biblioteca.\+app.\+App.\+start (\begin{DoxyParamCaption}\item[{Stage}]{stage}{}\end{DoxyParamCaption}) throws Exception}
+
+
+
+Metodo di avvio del ciclo di vita Java\+FX. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stage} & Lo stage primario (finestra) fornito dal sistema. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & se il file FXML della vista principale non viene trovato.\\
+\hline
+\end{DoxyExceptions}
+Il metodo carica il file {\ttfamily main\+View.\+fxml}, inizializza la scena e rende visibile la finestra principale dell\textquotesingle{}applicazione. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/app/\mbox{\hyperlink{_app_8java}{App.\+java}}\end{DoxyCompactItemize}

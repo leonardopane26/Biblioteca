@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['salvaarchivio_0',['salvaArchivio',['../classbiblioteca_1_1model_1_1_archivio.html#a7489e2acb7b7c079ec06c0bb391e8ca3',1,'biblioteca::model::Archivio']]],
+  ['salvastato_1',['salvaStato',['../classbiblioteca_1_1model_1_1_gestore_biblioteca.html#af0b0c1129413cacc04e3d9444666b12f',1,'biblioteca::model::GestoreBiblioteca']]],
+  ['setannopubblicazione_2',['setAnnoPubblicazione',['../classbiblioteca_1_1model_1_1_libro.html#a8fe9c46f1ace14f7e207dda5af9c52d4',1,'biblioteca::model::Libro']]],
+  ['setautori_3',['setAutori',['../classbiblioteca_1_1model_1_1_libro.html#a9e886f0df6dfe8b0c11ad5f50715eee9',1,'biblioteca::model::Libro']]],
+  ['setcognome_4',['setCognome',['../classbiblioteca_1_1model_1_1_utente.html#aecc43ab5c901302ed6437d8f2b5b8c02',1,'biblioteca::model::Utente']]],
+  ['setdatafine_5',['setDataFine',['../classbiblioteca_1_1model_1_1_prestito.html#a616e1a96e4ff9c1d2cef01d6e32c22e9',1,'biblioteca::model::Prestito']]],
+  ['setdatarestituzioneeffettiva_6',['setDataRestituzioneEffettiva',['../classbiblioteca_1_1model_1_1_prestito.html#afbd128408bc8c1e3aa8df912da0c1650',1,'biblioteca::model::Prestito']]],
+  ['setdatiprestito_7',['setDatiPrestito',['../classbiblioteca_1_1controller_1_1_registra_restituzione_controller.html#aa9913d48ee8d26962be60873ead235a4',1,'biblioteca::controller::RegistraRestituzioneController']]],
+  ['setemail_8',['setEmail',['../classbiblioteca_1_1model_1_1_utente.html#ab328f012f5c017b39a332ed22f4426f3',1,'biblioteca::model::Utente']]],
+  ['setisbn_9',['setIsbn',['../classbiblioteca_1_1model_1_1_libro.html#a4b0f76ae79dc3b0f88ea8636758d32a5',1,'biblioteca::model::Libro']]],
+  ['setlibrodamodificare_10',['setLibroDaModificare',['../classbiblioteca_1_1controller_1_1_inserisci_libro_controller.html#aeee377cf9e104518af851a4e5aa0575c',1,'biblioteca::controller::InserisciLibroController']]],
+  ['setmatricola_11',['setMatricola',['../classbiblioteca_1_1model_1_1_utente.html#a463795e1999195c125b9e1d61457d24f',1,'biblioteca::model::Utente']]],
+  ['setnome_12',['setNome',['../classbiblioteca_1_1model_1_1_utente.html#a748c5df00d40c00dc6d9f42c2287aa9f',1,'biblioteca::model::Utente']]],
+  ['setnumerocopiedisponibili_13',['setNumeroCopieDisponibili',['../classbiblioteca_1_1model_1_1_libro.html#a8c12a4a834c47b82a2528018de1d568d',1,'biblioteca::model::Libro']]],
+  ['setnumerocopietotali_14',['setNumeroCopieTotali',['../classbiblioteca_1_1model_1_1_libro.html#a89abb1184d5630f71792f561712aff6c',1,'biblioteca::model::Libro']]],
+  ['settitolo_15',['setTitolo',['../classbiblioteca_1_1model_1_1_libro.html#a5fadebffc37a9901c99fbacde1cef5a5',1,'biblioteca::model::Libro']]],
+  ['setup_16',['setUp',['../classbiblioteca_1_1model_1_1_archivio_test.html#ae4b679c28247ea53bca44cdff0ee5fc5',1,'biblioteca.model.ArchivioTest.setUp()'],['../classbiblioteca_1_1model_1_1_gestore_biblioteca_test.html#a85e9977f4493d808da9e47d09df2add4',1,'biblioteca.model.GestoreBibliotecaTest.setUp()'],['../classbiblioteca_1_1model_1_1_libro_test.html#a5e24dd8eae4b616325cbdae352c01477',1,'biblioteca.model.LibroTest.setUp()'],['../classbiblioteca_1_1model_1_1_prestito_test.html#a439ef939d327a38c2f0a271c83884cb3',1,'biblioteca.model.PrestitoTest.setUp()'],['../classbiblioteca_1_1model_1_1_utente_test.html#a59079b2cc2c50d498e7a85c18a38d211',1,'biblioteca.model.UtenteTest.setUp()']]],
+  ['setupclass_17',['setUpClass',['../classbiblioteca_1_1model_1_1_archivio_test.html#a92cdb8bfcc5528e062d93b76fea4d227',1,'biblioteca.model.ArchivioTest.setUpClass()'],['../classbiblioteca_1_1model_1_1_gestore_biblioteca_test.html#a1ad32267ef09a535344fc0f63453f92c',1,'biblioteca.model.GestoreBibliotecaTest.setUpClass()'],['../classbiblioteca_1_1model_1_1_libro_test.html#acde49ef76b0fbc67c6b342d204f57db3',1,'biblioteca.model.LibroTest.setUpClass()'],['../classbiblioteca_1_1model_1_1_prestito_test.html#a3b3ac08aca53b88f3e4294ae29870cbc',1,'biblioteca.model.PrestitoTest.setUpClass()'],['../classbiblioteca_1_1model_1_1_utente_test.html#af4df1f19dccb961a2bc257e726ed3a9a',1,'biblioteca.model.UtenteTest.setUpClass()']]],
+  ['setutentedamodificare_18',['setUtenteDaModificare',['../classbiblioteca_1_1controller_1_1_inserisci_utente_controller.html#ae84e8f4a65351c3965af8ce0cb9d1c50',1,'biblioteca::controller::InserisciUtenteController']]],
+  ['start_19',['start',['../classbiblioteca_1_1app_1_1_app.html#a72d5002e26339b241f160167c6c18163',1,'biblioteca::app::App']]]
+];

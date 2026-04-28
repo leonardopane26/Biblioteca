@@ -1,0 +1,410 @@
+\doxysection{biblioteca.\+model.\+Gestore\+Biblioteca Class Reference}
+\hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca}{}\label{classbiblioteca_1_1model_1_1_gestore_biblioteca}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+
+
+Classe che coordina le operazioni tra l\textquotesingle{}interfaccia e i dati.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a6cd6b1e5470a1cb9ca60f229ca8e9d}{Gestore\+Biblioteca}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore di \doxylink{classbiblioteca_1_1model_1_1_gestore_biblioteca}{Gestore\+Biblioteca}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a1fdd3c00db8b5f8847ec0ffe4fbabb}{carica\+Dati\+Iniziali}} ()
+\begin{DoxyCompactList}\small\item\em Carica tutti i file CSV (Libri, Utenti, Prestiti) all\textquotesingle{}avvio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_af0b0c1129413cacc04e3d9444666b12f}{salva\+Stato}} ()
+\begin{DoxyCompactList}\small\item\em Salva lo stato attuale dell\textquotesingle{}archivio su file persistenti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a03f9cd00f6b92c00e75564cd10f715}{aggiungi\+Libro}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} l)
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo libro al catalogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_ad4ee0f89b4b30efab236d88426a2217e}{rimuovi\+Libro}} (String isbn)
+\begin{DoxyCompactList}\small\item\em Rimuove un libro dal catalogo tramite ISBN. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a296c2dcbb8511de82c75bffd64b015ec}{rimuovi\+Utente}} (String matricola)
+\begin{DoxyCompactList}\small\item\em Rimuove un utente dal sistema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_aa62338fc6486c29b1d89b21943d20e80}{cerca\+Libro\+Per\+ISBN}} (String isbn)
+\begin{DoxyCompactList}\small\item\em Cerca un libro tramite codice ISBN. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_afa531eb52e38c0e070f3f297297c6228}{cerca\+Libri\+Per\+Titolo}} (String titolo)
+\begin{DoxyCompactList}\small\item\em Cerca libri il cui titolo contiene la stringa specificata. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_ac52127464a45f5f1248eb56d1fe96746}{cerca\+Utente\+Per\+Cognome}} (String cognome)
+\begin{DoxyCompactList}\small\item\em Cerca utenti tramite cognome. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_abd0f822697bcaeaee45e248719fb822c}{cerca\+Utente\+Per\+Matricola}} (String matricola)
+\begin{DoxyCompactList}\small\item\em Cerca un utente tramite matricola. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9b1cdaadf7a7cd93e2f7ef5b7ea058ec}{filtra\+Libri\+Disponibili}} ()
+\begin{DoxyCompactList}\small\item\em Filtra il catalogo mostrando solo i libri con almeno una copia disponibile. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0c3ec1d56f953b5a1a9eb4e2e08d031c}{filtra\+Prestit\+Utente}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u)
+\begin{DoxyCompactList}\small\item\em Recupera tutti i prestiti di un determinato utente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_ae3868260217f98d3bb69a938d1257cef}{registra\+Utente}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u)
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0ea6a9625c36340491bdd049f27bde22}{effettua\+Prestito}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u, \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} l, Local\+Date inizio, Local\+Date scadenza)
+\begin{DoxyCompactList}\small\item\em Esegue la logica di creazione di un nuovo prestito. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2bfba64d413eb5c7780fe05b993f9cfe}{restituisci\+Libro}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} p, Local\+Date data\+Rest)
+\begin{DoxyCompactList}\small\item\em Gestisce la restituzione di un libro. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3afdfbb97e09eef553374eaab7086f34}{get\+Lista\+Utenti}} ()
+\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_af009f6278ed8f1a23a2d26a6fd6ada76}{get\+Lista\+Libri}} ()
+\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2416852ce05020bf23ee403503b61a8f}{get\+Lista\+Prestiti}} ()
+\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9350707f0d655b7267ad6a87da290819}{get\+Prestiti\+In\+Ritardo}} ()
+\begin{DoxyCompactList}\small\item\em Individua tutti i prestiti scaduti e non ancora restituiti. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a39dd0a3dea7c20694c71a22adfa2dd}{get\+Catalogo\+Ordinato}} (Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Restituisce il catalogo libri ordinato secondo un criterio specifico. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_a6191f5ce1a03696e0bdc86e946b55cbd}{get\+Utenti\+Ordinati}} (Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Restituisce la lista utenti ordinata. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_gestore_biblioteca_acf079251230e5f96ffc65777ac4d7df3}{get\+Prestiti\+Ordinati}} (Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ c)
+\begin{DoxyCompactList}\small\item\em Restituisce la lista prestiti ordinata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe che coordina le operazioni tra l\textquotesingle{}interfaccia e i dati. 
+
+Implementa la logica di business della biblioteca, inclusi i vincoli sui prestiti, la gestione dell\textquotesingle{}inventario e le funzioni di ricerca/filtraggio. Utilizza il pattern Singleton per accedere all\textquotesingle{}\doxylink{classbiblioteca_1_1model_1_1_archivio}{Archivio}. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/14 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a6cd6b1e5470a1cb9ca60f229ca8e9d}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!GestoreBiblioteca@{GestoreBiblioteca}}
+\index{GestoreBiblioteca@{GestoreBiblioteca}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{GestoreBiblioteca()}{GestoreBiblioteca()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a6cd6b1e5470a1cb9ca60f229ca8e9d} 
+biblioteca.\+model.\+Gestore\+Biblioteca.\+Gestore\+Biblioteca (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore di \doxylink{classbiblioteca_1_1model_1_1_gestore_biblioteca}{Gestore\+Biblioteca}. 
+
+Inizializza il riferimento all\textquotesingle{}archivio ottenendo l\textquotesingle{}istanza univoca di \doxylink{classbiblioteca_1_1model_1_1_archivio}{Archivio}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a03f9cd00f6b92c00e75564cd10f715}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!aggiungiLibro@{aggiungiLibro}}
+\index{aggiungiLibro@{aggiungiLibro}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{aggiungiLibro()}{aggiungiLibro()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a4a03f9cd00f6b92c00e75564cd10f715} 
+void biblioteca.\+model.\+Gestore\+Biblioteca.\+aggiungi\+Libro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un nuovo libro al catalogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Il libro da aggiungere.\\
+\hline
+\end{DoxyParams}
+Il libro viene aggiunto solo se l\textquotesingle{}ISBN non è già presente nell\textquotesingle{}archivio. \Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a1fdd3c00db8b5f8847ec0ffe4fbabb}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!caricaDatiIniziali@{caricaDatiIniziali}}
+\index{caricaDatiIniziali@{caricaDatiIniziali}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{caricaDatiIniziali()}{caricaDatiIniziali()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a1fdd3c00db8b5f8847ec0ffe4fbabb} 
+void biblioteca.\+model.\+Gestore\+Biblioteca.\+carica\+Dati\+Iniziali (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Carica tutti i file CSV (Libri, Utenti, Prestiti) all\textquotesingle{}avvio. 
+
+Gestisce internamente le eccezioni di caricamento stampando un errore su console. \Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_afa531eb52e38c0e070f3f297297c6228}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!cercaLibriPerTitolo@{cercaLibriPerTitolo}}
+\index{cercaLibriPerTitolo@{cercaLibriPerTitolo}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaLibriPerTitolo()}{cercaLibriPerTitolo()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_afa531eb52e38c0e070f3f297297c6228} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+cerca\+Libri\+Per\+Titolo (\begin{DoxyParamCaption}\item[{String}]{titolo}{}\end{DoxyParamCaption})}
+
+
+
+Cerca libri il cui titolo contiene la stringa specificata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titolo} & Parte del titolo da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista di libri che soddisfano il criterio. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_aa62338fc6486c29b1d89b21943d20e80}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!cercaLibroPerISBN@{cercaLibroPerISBN}}
+\index{cercaLibroPerISBN@{cercaLibroPerISBN}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaLibroPerISBN()}{cercaLibroPerISBN()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_aa62338fc6486c29b1d89b21943d20e80} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} biblioteca.\+model.\+Gestore\+Biblioteca.\+cerca\+Libro\+Per\+ISBN (\begin{DoxyParamCaption}\item[{String}]{isbn}{}\end{DoxyParamCaption})}
+
+
+
+Cerca un libro tramite codice ISBN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isbn} & ISBN da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_libro}{Libro} trovato o null. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_ac52127464a45f5f1248eb56d1fe96746}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!cercaUtentePerCognome@{cercaUtentePerCognome}}
+\index{cercaUtentePerCognome@{cercaUtentePerCognome}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaUtentePerCognome()}{cercaUtentePerCognome()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_ac52127464a45f5f1248eb56d1fe96746} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+cerca\+Utente\+Per\+Cognome (\begin{DoxyParamCaption}\item[{String}]{cognome}{}\end{DoxyParamCaption})}
+
+
+
+Cerca utenti tramite cognome. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cognome} & Parte del cognome da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista di utenti che soddisfano il criterio. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_abd0f822697bcaeaee45e248719fb822c}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!cercaUtentePerMatricola@{cercaUtentePerMatricola}}
+\index{cercaUtentePerMatricola@{cercaUtentePerMatricola}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{cercaUtentePerMatricola()}{cercaUtentePerMatricola()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_abd0f822697bcaeaee45e248719fb822c} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} biblioteca.\+model.\+Gestore\+Biblioteca.\+cerca\+Utente\+Per\+Matricola (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Cerca un utente tramite matricola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & Matricola da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente} trovato o null. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0ea6a9625c36340491bdd049f27bde22}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!effettuaPrestito@{effettuaPrestito}}
+\index{effettuaPrestito@{effettuaPrestito}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{effettuaPrestito()}{effettuaPrestito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0ea6a9625c36340491bdd049f27bde22} 
+boolean biblioteca.\+model.\+Gestore\+Biblioteca.\+effettua\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u}{, }\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{l}{, }\item[{Local\+Date}]{inizio}{, }\item[{Local\+Date}]{scadenza}{}\end{DoxyParamCaption})}
+
+
+
+Esegue la logica di creazione di un nuovo prestito. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & L\textquotesingle{}utente richiedente. \\
+\hline
+{\em l} & Il libro richiesto. \\
+\hline
+{\em inizio} & Data di inizio prestito. \\
+\hline
+{\em scadenza} & Data di scadenza. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se il prestito è registrato, false se l\textquotesingle{}utente ha raggiunto il limite o il libro è esaurito.
+\end{DoxyReturn}
+Se il prestito va a buon fine, il numero di copie disponibili del libro viene decrementato. \Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9b1cdaadf7a7cd93e2f7ef5b7ea058ec}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!filtraLibriDisponibili@{filtraLibriDisponibili}}
+\index{filtraLibriDisponibili@{filtraLibriDisponibili}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{filtraLibriDisponibili()}{filtraLibriDisponibili()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9b1cdaadf7a7cd93e2f7ef5b7ea058ec} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+filtra\+Libri\+Disponibili (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Filtra il catalogo mostrando solo i libri con almeno una copia disponibile. 
+
+\begin{DoxyReturn}{Returns}
+Lista di libri disponibili. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0c3ec1d56f953b5a1a9eb4e2e08d031c}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!filtraPrestitUtente@{filtraPrestitUtente}}
+\index{filtraPrestitUtente@{filtraPrestitUtente}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{filtraPrestitUtente()}{filtraPrestitUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a0c3ec1d56f953b5a1a9eb4e2e08d031c} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+filtra\+Prestit\+Utente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u}{}\end{DoxyParamCaption})}
+
+
+
+Recupera tutti i prestiti di un determinato utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & L\textquotesingle{}utente di cui filtrare i prestiti. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista di oggetti \doxylink{classbiblioteca_1_1model_1_1_prestito}{Prestito}. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a39dd0a3dea7c20694c71a22adfa2dd}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getCatalogoOrdinato@{getCatalogoOrdinato}}
+\index{getCatalogoOrdinato@{getCatalogoOrdinato}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getCatalogoOrdinato()}{getCatalogoOrdinato()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3a39dd0a3dea7c20694c71a22adfa2dd} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Catalogo\+Ordinato (\begin{DoxyParamCaption}\item[{Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il catalogo libri ordinato secondo un criterio specifico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Il comparatore che definisce l\textquotesingle{}ordine (es. per Titolo, per Anno). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista ordinata di libri. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_af009f6278ed8f1a23a2d26a6fd6ada76}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getListaLibri@{getListaLibri}}
+\index{getListaLibri@{getListaLibri}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getListaLibri()}{getListaLibri()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_af009f6278ed8f1a23a2d26a6fd6ada76} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Lista\+Libri (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista completa dei libri. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2416852ce05020bf23ee403503b61a8f}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getListaPrestiti@{getListaPrestiti}}
+\index{getListaPrestiti@{getListaPrestiti}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getListaPrestiti()}{getListaPrestiti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2416852ce05020bf23ee403503b61a8f} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Lista\+Prestiti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista di tutti i prestiti registrati. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3afdfbb97e09eef553374eaab7086f34}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getListaUtenti@{getListaUtenti}}
+\index{getListaUtenti@{getListaUtenti}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getListaUtenti()}{getListaUtenti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a3afdfbb97e09eef553374eaab7086f34} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Lista\+Utenti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista completa degli utenti. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9350707f0d655b7267ad6a87da290819}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getPrestitiInRitardo@{getPrestitiInRitardo}}
+\index{getPrestitiInRitardo@{getPrestitiInRitardo}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getPrestitiInRitardo()}{getPrestitiInRitardo()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a9350707f0d655b7267ad6a87da290819} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Prestiti\+In\+Ritardo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Individua tutti i prestiti scaduti e non ancora restituiti. 
+
+\begin{DoxyReturn}{Returns}
+Lista dei prestiti in ritardo rispetto alla data odierna. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_acf079251230e5f96ffc65777ac4d7df3}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getPrestitiOrdinati@{getPrestitiOrdinati}}
+\index{getPrestitiOrdinati@{getPrestitiOrdinati}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getPrestitiOrdinati()}{getPrestitiOrdinati()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_acf079251230e5f96ffc65777ac4d7df3} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Prestiti\+Ordinati (\begin{DoxyParamCaption}\item[{Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce la lista prestiti ordinata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Il comparatore per i prestiti. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista ordinata di prestiti. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a6191f5ce1a03696e0bdc86e946b55cbd}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!getUtentiOrdinati@{getUtentiOrdinati}}
+\index{getUtentiOrdinati@{getUtentiOrdinati}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{getUtentiOrdinati()}{getUtentiOrdinati()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a6191f5ce1a03696e0bdc86e946b55cbd} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ biblioteca.\+model.\+Gestore\+Biblioteca.\+get\+Utenti\+Ordinati (\begin{DoxyParamCaption}\item[{Comparator$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce la lista utenti ordinata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Il comparatore per gli utenti. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista ordinata di utenti. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_ae3868260217f98d3bb69a938d1257cef}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!registraUtente@{registraUtente}}
+\index{registraUtente@{registraUtente}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{registraUtente()}{registraUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_ae3868260217f98d3bb69a938d1257cef} 
+void biblioteca.\+model.\+Gestore\+Biblioteca.\+registra\+Utente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuovo utente nel sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & L\textquotesingle{}utente da registrare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2bfba64d413eb5c7780fe05b993f9cfe}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!restituisciLibro@{restituisciLibro}}
+\index{restituisciLibro@{restituisciLibro}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{restituisciLibro()}{restituisciLibro()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a2bfba64d413eb5c7780fe05b993f9cfe} 
+String biblioteca.\+model.\+Gestore\+Biblioteca.\+restituisci\+Libro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{p}{, }\item[{Local\+Date}]{data\+Rest}{}\end{DoxyParamCaption})}
+
+
+
+Gestisce la restituzione di un libro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Il prestito da chiudere. \\
+\hline
+{\em data\+Rest} & La data effettiva di riconsegna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Messaggio che indica se la restituzione è regolare o in ritardo.
+\end{DoxyReturn}
+Aggiorna le copie disponibili del libro e rimuove il prestito dalla lista attiva. \Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_ad4ee0f89b4b30efab236d88426a2217e}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!rimuoviLibro@{rimuoviLibro}}
+\index{rimuoviLibro@{rimuoviLibro}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{rimuoviLibro()}{rimuoviLibro()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_ad4ee0f89b4b30efab236d88426a2217e} 
+void biblioteca.\+model.\+Gestore\+Biblioteca.\+rimuovi\+Libro (\begin{DoxyParamCaption}\item[{String}]{isbn}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un libro dal catalogo tramite ISBN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isbn} & Il codice ISBN del libro da eliminare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_a296c2dcbb8511de82c75bffd64b015ec}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!rimuoviUtente@{rimuoviUtente}}
+\index{rimuoviUtente@{rimuoviUtente}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{rimuoviUtente()}{rimuoviUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_a296c2dcbb8511de82c75bffd64b015ec} 
+String biblioteca.\+model.\+Gestore\+Biblioteca.\+rimuovi\+Utente (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un utente dal sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & La matricola dell\textquotesingle{}utente da rimuovere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stringa descrittiva dell\textquotesingle{}esito (successo o motivo del fallimento).
+\end{DoxyReturn}
+Impedisce la rimozione se l\textquotesingle{}utente ha ancora dei prestiti attivi. \Hypertarget{classbiblioteca_1_1model_1_1_gestore_biblioteca_af0b0c1129413cacc04e3d9444666b12f}\index{biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}!salvaStato@{salvaStato}}
+\index{salvaStato@{salvaStato}!biblioteca.model.GestoreBiblioteca@{biblioteca.model.GestoreBiblioteca}}
+\doxysubsubsection{\texorpdfstring{salvaStato()}{salvaStato()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_gestore_biblioteca_af0b0c1129413cacc04e3d9444666b12f} 
+void biblioteca.\+model.\+Gestore\+Biblioteca.\+salva\+Stato (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Salva lo stato attuale dell\textquotesingle{}archivio su file persistenti. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/model/\mbox{\hyperlink{_gestore_biblioteca_8java}{Gestore\+Biblioteca.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,260 @@
+\doxysection{biblioteca.\+model.\+Archivio Class Reference}
+\hypertarget{classbiblioteca_1_1model_1_1_archivio}{}\label{classbiblioteca_1_1model_1_1_archivio}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+
+
+Gestisce la persistenza dei dati e l\textquotesingle{}archiviazione del sistema.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a6355f758cf02c6fe41ed2683ec20bcd7}{carica\+Libri}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Carica i libri dal file "{}libri.\+csv"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a80e5dba0adcf73405e7221f003d4c1d0}{carica\+Utenti}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Carica gli utenti dal file "{}utenti.\+csv"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a5033413b354011817e78faa015872ca7}{carica\+Prestiti}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Carica i prestiti dal file "{}prestiti.\+csv"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a7489e2acb7b7c079ec06c0bb391e8ca3}{salva\+Archivio}} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Salva tutti i dati correnti dell\textquotesingle{}archivio sui rispettivi file CSV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a020c3232e28f26d3762b363ae4c8e458}{cerca\+Libro\+Per\+ISBN}} (String isbn)
+\begin{DoxyCompactList}\small\item\em Ricerca un libro nella lista interna tramite ISBN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a1492edc46f45719befc77a830ff97d57}{cerca\+Utente\+Per\+Matricola}} (String matricola)
+\begin{DoxyCompactList}\small\item\em Ricerca un utente nella lista interna tramite matricola. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a852f28fd46b74df4e7f0ae46f4287f75}{filtra\+Prestiti\+Per\+Utente}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u)
+\begin{DoxyCompactList}\small\item\em Filtra i prestiti non ancora restituiti per un utente specifico. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_ad32ab07f94f8a0414cbf8cda5bcf197f}{get\+Lista\+Libri}} ()
+\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_ad14cd5807953960bf76b5e25ec55255c}{get\+Lista\+Utenti}} ()
+\item 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_a69831883aa3bc75751abf569da811754}{get\+Lista\+Prestiti}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_ad220493f16617433d59ab6515760cfae}{aggiungi\+Libro}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} l)
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_acc43f43f72a3ce3a423fb8d90e625f15}{aggiungi\+Utente}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u)
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_af67b278b5786c863cc3d4701cea2c417}{aggiungi\+Prestito}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} p)
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_ad8933f4b4ef611f7ec2427bbe5995ea0}{rimuovi\+Prestito}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} p)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio}{Archivio}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio_ad4f6964c5f46ff22aee045f0c4d2ce7b}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}istanza univoca dell\textquotesingle{}\doxylink{classbiblioteca_1_1model_1_1_archivio}{Archivio}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce la persistenza dei dati e l\textquotesingle{}archiviazione del sistema. 
+
+La classe utilizza il pattern {\bfseries{Singleton}} per garantire un unico punto di accesso ai dati. Si occupa della lettura e scrittura su file CSV per libri, utenti e prestiti, fungendo da database testuale per l\textquotesingle{}applicazione. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/14 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_ad220493f16617433d59ab6515760cfae}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!aggiungiLibro@{aggiungiLibro}}
+\index{aggiungiLibro@{aggiungiLibro}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{aggiungiLibro()}{aggiungiLibro()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_ad220493f16617433d59ab6515760cfae} 
+void biblioteca.\+model.\+Archivio.\+aggiungi\+Libro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{l}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \doxylink{classbiblioteca_1_1model_1_1_libro}{Libro} da aggiungere alla lista interna. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_af67b278b5786c863cc3d4701cea2c417}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!aggiungiPrestito@{aggiungiPrestito}}
+\index{aggiungiPrestito@{aggiungiPrestito}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{aggiungiPrestito()}{aggiungiPrestito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_af67b278b5786c863cc3d4701cea2c417} 
+void biblioteca.\+model.\+Archivio.\+aggiungi\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{p}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{classbiblioteca_1_1model_1_1_prestito}{Prestito} da aggiungere alla lista interna. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_acc43f43f72a3ce3a423fb8d90e625f15}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!aggiungiUtente@{aggiungiUtente}}
+\index{aggiungiUtente@{aggiungiUtente}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{aggiungiUtente()}{aggiungiUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_acc43f43f72a3ce3a423fb8d90e625f15} 
+void biblioteca.\+model.\+Archivio.\+aggiungi\+Utente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente} da aggiungere alla lista interna. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a6355f758cf02c6fe41ed2683ec20bcd7}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!caricaLibri@{caricaLibri}}
+\index{caricaLibri@{caricaLibri}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{caricaLibri()}{caricaLibri()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a6355f758cf02c6fe41ed2683ec20bcd7} 
+void biblioteca.\+model.\+Archivio.\+carica\+Libri (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Carica i libri dal file "{}libri.\+csv"{}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & In caso di errori durante la lettura del file.\\
+\hline
+\end{DoxyExceptions}
+Legge ogni riga del CSV, separa i campi e crea oggetti di tipo \doxylink{classbiblioteca_1_1model_1_1_libro}{Libro}. Gli autori sono attesi separati da punto e virgola (;). \Hypertarget{classbiblioteca_1_1model_1_1_archivio_a5033413b354011817e78faa015872ca7}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!caricaPrestiti@{caricaPrestiti}}
+\index{caricaPrestiti@{caricaPrestiti}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{caricaPrestiti()}{caricaPrestiti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a5033413b354011817e78faa015872ca7} 
+void biblioteca.\+model.\+Archivio.\+carica\+Prestiti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Carica i prestiti dal file "{}prestiti.\+csv"{}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & In caso di errori di lettura.\\
+\hline
+\end{DoxyExceptions}
+Ricostruisce le associazioni tra Libri e Utenti esistenti cercandoli rispettivamente per ISBN e Matricola. \Hypertarget{classbiblioteca_1_1model_1_1_archivio_a80e5dba0adcf73405e7221f003d4c1d0}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!caricaUtenti@{caricaUtenti}}
+\index{caricaUtenti@{caricaUtenti}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{caricaUtenti()}{caricaUtenti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a80e5dba0adcf73405e7221f003d4c1d0} 
+void biblioteca.\+model.\+Archivio.\+carica\+Utenti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Carica gli utenti dal file "{}utenti.\+csv"{}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & In caso di errori di lettura. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a020c3232e28f26d3762b363ae4c8e458}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!cercaLibroPerISBN@{cercaLibroPerISBN}}
+\index{cercaLibroPerISBN@{cercaLibroPerISBN}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{cercaLibroPerISBN()}{cercaLibroPerISBN()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a020c3232e28f26d3762b363ae4c8e458} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} biblioteca.\+model.\+Archivio.\+cerca\+Libro\+Per\+ISBN (\begin{DoxyParamCaption}\item[{String}]{isbn}{}\end{DoxyParamCaption})}
+
+
+
+Ricerca un libro nella lista interna tramite ISBN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isbn} & Codice ISBN da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_libro}{Libro} corrispondente o null. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a1492edc46f45719befc77a830ff97d57}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!cercaUtentePerMatricola@{cercaUtentePerMatricola}}
+\index{cercaUtentePerMatricola@{cercaUtentePerMatricola}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{cercaUtentePerMatricola()}{cercaUtentePerMatricola()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a1492edc46f45719befc77a830ff97d57} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} biblioteca.\+model.\+Archivio.\+cerca\+Utente\+Per\+Matricola (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Ricerca un utente nella lista interna tramite matricola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & Matricola da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente} corrispondente o null. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a852f28fd46b74df4e7f0ae46f4287f75}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!filtraPrestitiPerUtente@{filtraPrestitiPerUtente}}
+\index{filtraPrestitiPerUtente@{filtraPrestitiPerUtente}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{filtraPrestitiPerUtente()}{filtraPrestitiPerUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a852f28fd46b74df4e7f0ae46f4287f75} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Archivio.\+filtra\+Prestiti\+Per\+Utente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u}{}\end{DoxyParamCaption})}
+
+
+
+Filtra i prestiti non ancora restituiti per un utente specifico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & L\textquotesingle{}utente di riferimento. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista dei prestiti attivi dell\textquotesingle{}utente. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_ad4f6964c5f46ff22aee045f0c4d2ce7b}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_ad4f6964c5f46ff22aee045f0c4d2ce7b} 
+static \mbox{\hyperlink{classbiblioteca_1_1model_1_1_archivio}{Archivio}} biblioteca.\+model.\+Archivio.\+get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Restituisce l\textquotesingle{}istanza univoca dell\textquotesingle{}\doxylink{classbiblioteca_1_1model_1_1_archivio}{Archivio}. 
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}unica istanza esistente di \doxylink{classbiblioteca_1_1model_1_1_archivio}{Archivio}. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_ad32ab07f94f8a0414cbf8cda5bcf197f}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!getListaLibri@{getListaLibri}}
+\index{getListaLibri@{getListaLibri}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{getListaLibri()}{getListaLibri()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_ad32ab07f94f8a0414cbf8cda5bcf197f} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} $>$ biblioteca.\+model.\+Archivio.\+get\+Lista\+Libri (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista dei libri caricati in memoria. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a69831883aa3bc75751abf569da811754}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!getListaPrestiti@{getListaPrestiti}}
+\index{getListaPrestiti@{getListaPrestiti}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{getListaPrestiti()}{getListaPrestiti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a69831883aa3bc75751abf569da811754} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} $>$ biblioteca.\+model.\+Archivio.\+get\+Lista\+Prestiti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista dei prestiti caricati in memoria. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_ad14cd5807953960bf76b5e25ec55255c}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!getListaUtenti@{getListaUtenti}}
+\index{getListaUtenti@{getListaUtenti}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{getListaUtenti()}{getListaUtenti()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_ad14cd5807953960bf76b5e25ec55255c} 
+List$<$ \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} $>$ biblioteca.\+model.\+Archivio.\+get\+Lista\+Utenti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La lista degli utenti caricati in memoria. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_ad8933f4b4ef611f7ec2427bbe5995ea0}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!rimuoviPrestito@{rimuoviPrestito}}
+\index{rimuoviPrestito@{rimuoviPrestito}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{rimuoviPrestito()}{rimuoviPrestito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_ad8933f4b4ef611f7ec2427bbe5995ea0} 
+void biblioteca.\+model.\+Archivio.\+rimuovi\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{p}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{classbiblioteca_1_1model_1_1_prestito}{Prestito} da rimuovere dalla lista interna. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_archivio_a7489e2acb7b7c079ec06c0bb391e8ca3}\index{biblioteca.model.Archivio@{biblioteca.model.Archivio}!salvaArchivio@{salvaArchivio}}
+\index{salvaArchivio@{salvaArchivio}!biblioteca.model.Archivio@{biblioteca.model.Archivio}}
+\doxysubsubsection{\texorpdfstring{salvaArchivio()}{salvaArchivio()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_archivio_a7489e2acb7b7c079ec06c0bb391e8ca3} 
+void biblioteca.\+model.\+Archivio.\+salva\+Archivio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Salva tutti i dati correnti dell\textquotesingle{}archivio sui rispettivi file CSV. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & In caso di errori durante la scrittura. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/model/\mbox{\hyperlink{_archivio_8java}{Archivio.\+java}}\end{DoxyCompactItemize}

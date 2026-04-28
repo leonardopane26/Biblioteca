@@ -1,0 +1,181 @@
+\doxysection{biblioteca.\+model.\+Prestito Class Reference}
+\hypertarget{classbiblioteca_1_1model_1_1_prestito}{}\label{classbiblioteca_1_1model_1_1_prestito}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+
+
+Gestisce le informazioni relative al prestito di un libro a un utente.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a1816acca76d480b63823e670ac77811e}{Prestito}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} libro, \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} utente, Local\+Date data\+Inizio, Local\+Date data\+Fine)
+\begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classbiblioteca_1_1model_1_1_prestito}{Prestito}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_adf439eb959fed32a82cfe90e0b87daf2}{get\+Libro}} ()
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a9ab59657ee531e4847c71fed2a4518df}{get\+Utente}} ()
+\item 
+Local\+Date \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_afaff9b3d7bb5d3fbdc1b0bc844258be8}{get\+Data\+Inizio}} ()
+\item 
+Local\+Date \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_aff0ca28594729eeca0b07b69267ca3b5}{get\+Data\+Fine}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a616e1a96e4ff9c1d2cef01d6e32c22e9}{set\+Data\+Fine}} (Local\+Date data\+Fine)
+\item 
+Local\+Date \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a5954be499cd394d07b88be5af772d7e2}{get\+Data\+Restituzione\+Effettiva}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_afbd128408bc8c1e3aa8df912da0c1650}{set\+Data\+Restituzione\+Effettiva}} (Local\+Date data\+Restituzione\+Effettiva)
+\item 
+boolean \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a1c4a81d55eec5f501d5918d49c0020a8}{is\+In\+Ritardo}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se il prestito è oltre la data di scadenza. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_ad29fe2807a483206a16b02de06e3cea7}{is\+Restituito}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se il libro è stato restituito. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito_a69938e7654f9a06c0617ac1828420b2f}{get\+Dettagli}} ()
+\begin{DoxyCompactList}\small\item\em Genera una stringa riassuntiva dei dettagli del prestito. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce le informazioni relative al prestito di un libro a un utente. 
+
+La classe tiene traccia delle date di inizio, scadenza e dell\textquotesingle{}eventuale restituzione effettiva, permettendo di verificare lo stato del prestito in tempo reale. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/14 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a1816acca76d480b63823e670ac77811e}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!Prestito@{Prestito}}
+\index{Prestito@{Prestito}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{Prestito()}{Prestito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a1816acca76d480b63823e670ac77811e} 
+biblioteca.\+model.\+Prestito.\+Prestito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{libro}{, }\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{, }\item[{Local\+Date}]{data\+Inizio}{, }\item[{Local\+Date}]{data\+Fine}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore della classe \doxylink{classbiblioteca_1_1model_1_1_prestito}{Prestito}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em libro} & Il libro concesso in prestito. \\
+\hline
+{\em utente} & L\textquotesingle{}utente beneficiario. \\
+\hline
+{\em data\+Inizio} & Data di inizio del prestito. \\
+\hline
+{\em data\+Fine} & Data di scadenza prevista. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_aff0ca28594729eeca0b07b69267ca3b5}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getDataFine@{getDataFine}}
+\index{getDataFine@{getDataFine}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getDataFine()}{getDataFine()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_aff0ca28594729eeca0b07b69267ca3b5} 
+Local\+Date biblioteca.\+model.\+Prestito.\+get\+Data\+Fine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La data di scadenza del prestito. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_afaff9b3d7bb5d3fbdc1b0bc844258be8}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getDataInizio@{getDataInizio}}
+\index{getDataInizio@{getDataInizio}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getDataInizio()}{getDataInizio()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_afaff9b3d7bb5d3fbdc1b0bc844258be8} 
+Local\+Date biblioteca.\+model.\+Prestito.\+get\+Data\+Inizio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La data di inizio prestito. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a5954be499cd394d07b88be5af772d7e2}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getDataRestituzioneEffettiva@{getDataRestituzioneEffettiva}}
+\index{getDataRestituzioneEffettiva@{getDataRestituzioneEffettiva}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getDataRestituzioneEffettiva()}{getDataRestituzioneEffettiva()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a5954be499cd394d07b88be5af772d7e2} 
+Local\+Date biblioteca.\+model.\+Prestito.\+get\+Data\+Restituzione\+Effettiva (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La data di restituzione reale, null se non ancora restituito. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a69938e7654f9a06c0617ac1828420b2f}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getDettagli@{getDettagli}}
+\index{getDettagli@{getDettagli}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getDettagli()}{getDettagli()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a69938e7654f9a06c0617ac1828420b2f} 
+String biblioteca.\+model.\+Prestito.\+get\+Dettagli (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Genera una stringa riassuntiva dei dettagli del prestito. 
+
+\begin{DoxyReturn}{Returns}
+Stringa formattata contenente Titolo, \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente} (Nome Cognome e Matricola) e data di Scadenza. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_adf439eb959fed32a82cfe90e0b87daf2}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getLibro@{getLibro}}
+\index{getLibro@{getLibro}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getLibro()}{getLibro()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_adf439eb959fed32a82cfe90e0b87daf2} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} biblioteca.\+model.\+Prestito.\+get\+Libro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_libro}{Libro} associato al prestito. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a9ab59657ee531e4847c71fed2a4518df}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!getUtente@{getUtente}}
+\index{getUtente@{getUtente}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{getUtente()}{getUtente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a9ab59657ee531e4847c71fed2a4518df} 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} biblioteca.\+model.\+Prestito.\+get\+Utente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}oggetto \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente} associato al prestito. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a1c4a81d55eec5f501d5918d49c0020a8}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!isInRitardo@{isInRitardo}}
+\index{isInRitardo@{isInRitardo}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{isInRitardo()}{isInRitardo()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a1c4a81d55eec5f501d5918d49c0020a8} 
+boolean biblioteca.\+model.\+Prestito.\+is\+In\+Ritardo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se il prestito è oltre la data di scadenza. 
+
+\begin{DoxyReturn}{Returns}
+true se la data corrente è successiva alla data di fine prestito, false altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_ad29fe2807a483206a16b02de06e3cea7}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!isRestituito@{isRestituito}}
+\index{isRestituito@{isRestituito}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{isRestituito()}{isRestituito()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_ad29fe2807a483206a16b02de06e3cea7} 
+boolean biblioteca.\+model.\+Prestito.\+is\+Restituito (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se il libro è stato restituito. 
+
+\begin{DoxyReturn}{Returns}
+true se data\+Restituzione\+Effettiva è stata valorizzata, false se è ancora null. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_a616e1a96e4ff9c1d2cef01d6e32c22e9}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!setDataFine@{setDataFine}}
+\index{setDataFine@{setDataFine}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{setDataFine()}{setDataFine()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_a616e1a96e4ff9c1d2cef01d6e32c22e9} 
+void biblioteca.\+model.\+Prestito.\+set\+Data\+Fine (\begin{DoxyParamCaption}\item[{Local\+Date}]{data\+Fine}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Fine} & Imposta una nuova data di scadenza. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_prestito_afbd128408bc8c1e3aa8df912da0c1650}\index{biblioteca.model.Prestito@{biblioteca.model.Prestito}!setDataRestituzioneEffettiva@{setDataRestituzioneEffettiva}}
+\index{setDataRestituzioneEffettiva@{setDataRestituzioneEffettiva}!biblioteca.model.Prestito@{biblioteca.model.Prestito}}
+\doxysubsubsection{\texorpdfstring{setDataRestituzioneEffettiva()}{setDataRestituzioneEffettiva()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_prestito_afbd128408bc8c1e3aa8df912da0c1650} 
+void biblioteca.\+model.\+Prestito.\+set\+Data\+Restituzione\+Effettiva (\begin{DoxyParamCaption}\item[{Local\+Date}]{data\+Restituzione\+Effettiva}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Restituzione\+Effettiva} & La data in cui il libro è stato riportato. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/model/\mbox{\hyperlink{_prestito_8java}{Prestito.\+java}}\end{DoxyCompactItemize}
