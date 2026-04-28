@@ -52,9 +52,21 @@ public class LibroTest {
      */
     @Test
     public void testGetTitolo() {
+       System.out.println("getTitolo");
        assertEquals("Nuovo libro" , libro.getTitolo());
     }
-
+    
+    /**
+     * Test of setTitolo method, of class Libro.
+     */
+    @Test
+    public void testSetTitolo(){
+       System.out.println("setTitolo");
+       
+       libro.setTitolo("Nuovo titolo");
+       assertEquals("Nuovo titolo" , libro.getTitolo());
+    }
+    
     /**
      * Test of getAutori method, of class Libro.
      */
@@ -63,7 +75,20 @@ public class LibroTest {
         System.out.println("getAutori");
         assertEquals(autori , libro.getAutori());
     }
+    
+    /**
+     * Test of setAutori method, of class Libro.
+     */
+    @Test
+    public void testSetAutori(){
+        System.out.println("setAutori");
+        
+        List<String> nuoviAutori = new ArrayList<>(Arrays.asList("nuovo primo autore", "nuovo secondo autore"));
+        libro.setAutori(nuoviAutori);
 
+        assertEquals(nuoviAutori, libro.getAutori());
+    } 
+    
     /**
      * Test of getAnnoPubblicazione method, of class Libro.
      */
@@ -72,7 +97,18 @@ public class LibroTest {
         System.out.println("getAnnoPubblicazione");
         assertEquals(2016, libro.getAnnoPubblicazione());
     }
-
+    
+    /**
+     * Test of setAnnoPubblicazione method, of class Libro.
+     */
+    @Test
+    public void testSetAnnoPubblicazione(){
+        System.out.println("setAnnoPubblicazione");
+        
+        libro.setAnnoPubblicazione(2026);
+        assertEquals(2026, libro.getAnnoPubblicazione());
+    }
+    
     /**
      * Test of getIsbn method, of class Libro.
      */
@@ -80,6 +116,17 @@ public class LibroTest {
     public void testGetIsbn() {
         System.out.println("getIsbn");
         assertEquals("1234567" , libro.getIsbn());
+    }
+    
+    /**
+     * Test of setIsbn method, of class Libro.
+     */
+    @Test
+    public void testSetIsbn(){
+        System.out.println("setIsbn");
+        
+        libro.setIsbn("001");
+        assertEquals("001" , libro.getIsbn());
     }
 
     /**
@@ -90,7 +137,38 @@ public class LibroTest {
         System.out.println("getNumeroCopieTotali");
         assertEquals(10 , libro.getNumeroCopieTotali());
     }
-
+    
+    /**
+     * Test of setNumeroCopieTotali method, of class Libro.
+     */
+    @Test
+    public void testSetNumeroCopieTotali(){
+        System.out.println("setNumeroCopieTotali");
+        
+        libro.setNumeroCopieTotali(20);
+        assertEquals(20 , libro.getNumeroCopieTotali());
+    }
+    
+    /**
+     * Test of getNumeroCopieDisponibili method, of class Libro.
+     */
+    @Test
+    public void testGetNumeroCopieDisponibili(){
+        System.out.println("getNumeroCopieDisponibili");
+        assertEquals(10, libro.getNumeroCopieDisponibili());
+    }
+    
+    /**
+     * Test of setNumeroCopieDisponibili method, of class Libro.
+     */
+    @Test
+    public void testSetNumeroCopieDisponibili(){
+        System.out.println("setNumeroCopieDisponibili");
+        
+        libro.setNumeroCopieDisponibili(15);
+        assertEquals(15 , libro.getNumeroCopieDisponibili());
+    }
+    
     /**
      * Test of incrementaCopie method, of class Libro.
      */
