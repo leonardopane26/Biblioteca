@@ -1,0 +1,99 @@
+\doxysection{biblioteca.\+controller.\+Inserisci\+Utente\+Controller Class Reference}
+\hypertarget{classbiblioteca_1_1controller_1_1_inserisci_utente_controller}{}\label{classbiblioteca_1_1controller_1_1_inserisci_utente_controller}\index{biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}}
+
+
+Controller per la gestione dell\textquotesingle{}anagrafica utenti.  
+
+
+Inheritance diagram for biblioteca.\+controller.\+Inserisci\+Utente\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1controller_1_1_inserisci_utente_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a19015d8c830c3459a014219700d23ee0}{Inserisci\+Utente\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore del controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a34a80ad420df6733af102864e2da09ea}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Inizializzatore Java\+FX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_ae84e8f4a65351c3965af8ce0cb9d1c50}{set\+Utente\+Da\+Modificare}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} utente)
+\begin{DoxyCompactList}\small\item\em Pre-\/compila i campi per la modifica di un utente esistente. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a00344d12a262fd7709c14ff5fdee5122}{is\+Valid}} (String email)
+\begin{DoxyCompactList}\small\item\em Verifica la validità sintattica di un indirizzo email. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller per la gestione dell\textquotesingle{}anagrafica utenti. 
+
+Gestisce l\textquotesingle{}interfaccia FXML per la registrazione di nuovi utenti o la modifica di quelli esistenti. Include una validazione rigorosa dei campi, in particolare per la matricola (solo numerica) e l\textquotesingle{}indirizzo email (tramite Regex). \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a19015d8c830c3459a014219700d23ee0}\index{biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}!InserisciUtenteController@{InserisciUtenteController}}
+\index{InserisciUtenteController@{InserisciUtenteController}!biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}}
+\doxysubsubsection{\texorpdfstring{InserisciUtenteController()}{InserisciUtenteController()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a19015d8c830c3459a014219700d23ee0} 
+biblioteca.\+controller.\+Inserisci\+Utente\+Controller.\+Inserisci\+Utente\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del controller. 
+
+Inizializza l\textquotesingle{}istanza del Gestore\+Biblioteca. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a34a80ad420df6733af102864e2da09ea}\index{biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}!initialize@{initialize}}
+\index{initialize@{initialize}!biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a34a80ad420df6733af102864e2da09ea} 
+void biblioteca.\+controller.\+Inserisci\+Utente\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Inizializzatore Java\+FX. 
+
+Metodo richiamato automaticamente dopo il caricamento del file FXML. \Hypertarget{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a00344d12a262fd7709c14ff5fdee5122}\index{biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}!isValid@{isValid}}
+\index{isValid@{isValid}!biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_a00344d12a262fd7709c14ff5fdee5122} 
+boolean biblioteca.\+controller.\+Inserisci\+Utente\+Controller.\+is\+Valid (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Verifica la validità sintattica di un indirizzo email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & La stringa da controllare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se l\textquotesingle{}email rispetta lo standard, false altrimenti.
+\end{DoxyReturn}
+Utilizza una Regular Expression (Pattern e Matcher) per il controllo. \Hypertarget{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_ae84e8f4a65351c3965af8ce0cb9d1c50}\index{biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}!setUtenteDaModificare@{setUtenteDaModificare}}
+\index{setUtenteDaModificare@{setUtenteDaModificare}!biblioteca.controller.InserisciUtenteController@{biblioteca.controller.InserisciUtenteController}}
+\doxysubsubsection{\texorpdfstring{setUtenteDaModificare()}{setUtenteDaModificare()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_inserisci_utente_controller_ae84e8f4a65351c3965af8ce0cb9d1c50} 
+void biblioteca.\+controller.\+Inserisci\+Utente\+Controller.\+set\+Utente\+Da\+Modificare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{}\end{DoxyParamCaption})}
+
+
+
+Pre-\/compila i campi per la modifica di un utente esistente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & L\textquotesingle{}oggetto Utente da modificare.\\
+\hline
+\end{DoxyParams}
+Imposta il campo matricola come non editabile per preservare l\textquotesingle{}integrità dei riferimenti. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/controller/\mbox{\hyperlink{_inserisci_utente_controller_8java}{Inserisci\+Utente\+Controller.\+java}}\end{DoxyCompactItemize}

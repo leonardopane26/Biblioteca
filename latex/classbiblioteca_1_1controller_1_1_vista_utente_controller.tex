@@ -1,0 +1,79 @@
+\doxysection{biblioteca.\+controller.\+Vista\+Utente\+Controller Class Reference}
+\hypertarget{classbiblioteca_1_1controller_1_1_vista_utente_controller}{}\label{classbiblioteca_1_1controller_1_1_vista_utente_controller}\index{biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}}
+
+
+Controller per la visualizzazione dettagliata del profilo di un utente.  
+
+
+Inheritance diagram for biblioteca.\+controller.\+Vista\+Utente\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1controller_1_1_vista_utente_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_utente_controller_a598d6552767d12c36d7608d4349b4fb0}{Vista\+Utente\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore del controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_utente_controller_ade71b47f8b462e832f61bf431304d3a7}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Inizializza la tabella dei prestiti utente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_utente_controller_a1c0406b779a0103d3c3f7c0f672246ec}{inizializza\+Dati}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} utente)
+\begin{DoxyCompactList}\small\item\em Carica i dati dell\textquotesingle{}utente nell\textquotesingle{}interfaccia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller per la visualizzazione dettagliata del profilo di un utente. 
+
+Gestisce la schermata di riepilogo che mostra i dati anagrafici di un utente e la tabella dei libri attualmente in suo possesso. Include la logica per la cancellazione sicura (inibita se ci sono prestiti attivi) e l\textquotesingle{}accesso alla modifica. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_utente_controller_a598d6552767d12c36d7608d4349b4fb0}\index{biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}!VistaUtenteController@{VistaUtenteController}}
+\index{VistaUtenteController@{VistaUtenteController}!biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}}
+\doxysubsubsection{\texorpdfstring{VistaUtenteController()}{VistaUtenteController()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_utente_controller_a598d6552767d12c36d7608d4349b4fb0} 
+biblioteca.\+controller.\+Vista\+Utente\+Controller.\+Vista\+Utente\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del controller. 
+
+Inizializza l\textquotesingle{}istanza del Gestore\+Biblioteca. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_utente_controller_ade71b47f8b462e832f61bf431304d3a7}\index{biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}!initialize@{initialize}}
+\index{initialize@{initialize}!biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_utente_controller_ade71b47f8b462e832f61bf431304d3a7} 
+void biblioteca.\+controller.\+Vista\+Utente\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza la tabella dei prestiti utente. 
+
+Configura le colonne per estrarre i dati dal modello {\ttfamily Libro} annidato nell\textquotesingle{}oggetto {\ttfamily Prestito} tramite {\ttfamily Simple\+String\+Property}. \Hypertarget{classbiblioteca_1_1controller_1_1_vista_utente_controller_a1c0406b779a0103d3c3f7c0f672246ec}\index{biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}!inizializzaDati@{inizializzaDati}}
+\index{inizializzaDati@{inizializzaDati}!biblioteca.controller.VistaUtenteController@{biblioteca.controller.VistaUtenteController}}
+\doxysubsubsection{\texorpdfstring{inizializzaDati()}{inizializzaDati()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_utente_controller_a1c0406b779a0103d3c3f7c0f672246ec} 
+void biblioteca.\+controller.\+Vista\+Utente\+Controller.\+inizializza\+Dati (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{}\end{DoxyParamCaption})}
+
+
+
+Carica i dati dell\textquotesingle{}utente nell\textquotesingle{}interfaccia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & L\textquotesingle{}istanza dell\textquotesingle{}utente da visualizzare.\\
+\hline
+\end{DoxyParams}
+Popola le label informative e interroga il gestore per ottenere solo i prestiti attivi legati alla matricola dell\textquotesingle{}utente. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/controller/\mbox{\hyperlink{_vista_utente_controller_8java}{Vista\+Utente\+Controller.\+java}}\end{DoxyCompactItemize}

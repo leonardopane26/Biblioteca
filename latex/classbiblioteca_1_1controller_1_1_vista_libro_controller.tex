@@ -1,0 +1,79 @@
+\doxysection{biblioteca.\+controller.\+Vista\+Libro\+Controller Class Reference}
+\hypertarget{classbiblioteca_1_1controller_1_1_vista_libro_controller}{}\label{classbiblioteca_1_1controller_1_1_vista_libro_controller}\index{biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}}
+
+
+Controller per la visualizzazione dettagliata di un singolo libro.  
+
+
+Inheritance diagram for biblioteca.\+controller.\+Vista\+Libro\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1controller_1_1_vista_libro_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_libro_controller_a8c2f893500f815b187062efd4fbf1cc2}{Vista\+Libro\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore del controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_libro_controller_a66c0aa16f053d7e4f15d7d6e1fa3fc78}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Inizializza la struttura della tabella dei prestiti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_libro_controller_ad32fb6c7c34ab5a976a51bf76ffeb74a}{inizializza\+Dati}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}} libro)
+\begin{DoxyCompactList}\small\item\em Popola l\textquotesingle{}interfaccia con i dati del libro selezionato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller per la visualizzazione dettagliata di un singolo libro. 
+
+Questa classe gestisce una vista di approfondimento che mostra i dettagli completi di un libro (ISBN, autori, copie) e una tabella dei prestiti attivi relativi esclusivamente a quel volume. Permette inoltre l\textquotesingle{}avvio della modifica o l\textquotesingle{}eliminazione del libro previa verifica dei vincoli. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_libro_controller_a8c2f893500f815b187062efd4fbf1cc2}\index{biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}!VistaLibroController@{VistaLibroController}}
+\index{VistaLibroController@{VistaLibroController}!biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}}
+\doxysubsubsection{\texorpdfstring{VistaLibroController()}{VistaLibroController()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_libro_controller_a8c2f893500f815b187062efd4fbf1cc2} 
+biblioteca.\+controller.\+Vista\+Libro\+Controller.\+Vista\+Libro\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del controller. 
+
+Inizializza l\textquotesingle{}istanza del Gestore\+Biblioteca. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_libro_controller_a66c0aa16f053d7e4f15d7d6e1fa3fc78}\index{biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}!initialize@{initialize}}
+\index{initialize@{initialize}!biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_libro_controller_a66c0aa16f053d7e4f15d7d6e1fa3fc78} 
+void biblioteca.\+controller.\+Vista\+Libro\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza la struttura della tabella dei prestiti. 
+
+Configura le colonne della tabella utilizzando sia Property\+Value\+Factory che Simple\+String\+Property per accedere ai dati annidati dell\textquotesingle{}oggetto Utente associato al Prestito. \Hypertarget{classbiblioteca_1_1controller_1_1_vista_libro_controller_ad32fb6c7c34ab5a976a51bf76ffeb74a}\index{biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}!inizializzaDati@{inizializzaDati}}
+\index{inizializzaDati@{inizializzaDati}!biblioteca.controller.VistaLibroController@{biblioteca.controller.VistaLibroController}}
+\doxysubsubsection{\texorpdfstring{inizializzaDati()}{inizializzaDati()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_libro_controller_ad32fb6c7c34ab5a976a51bf76ffeb74a} 
+void biblioteca.\+controller.\+Vista\+Libro\+Controller.\+inizializza\+Dati (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_libro}{Libro}}}]{libro}{}\end{DoxyParamCaption})}
+
+
+
+Popola l\textquotesingle{}interfaccia con i dati del libro selezionato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em libro} & L\textquotesingle{}istanza del libro da visualizzare.\\
+\hline
+\end{DoxyParams}
+Il metodo aggiorna le label testuali e filtra la lista globale dei prestiti per mostrare nella tabella solo gli utenti che hanno attualmente in mano una copia di questo specifico libro (tramite confronto ISBN). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/controller/\mbox{\hyperlink{_vista_libro_controller_8java}{Vista\+Libro\+Controller.\+java}}\end{DoxyCompactItemize}

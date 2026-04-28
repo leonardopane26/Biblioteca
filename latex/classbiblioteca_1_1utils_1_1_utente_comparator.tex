@@ -1,0 +1,61 @@
+\doxysection{biblioteca.\+utils.\+Utente\+Comparator Class Reference}
+\hypertarget{classbiblioteca_1_1utils_1_1_utente_comparator}{}\label{classbiblioteca_1_1utils_1_1_utente_comparator}\index{biblioteca.utils.UtenteComparator@{biblioteca.utils.UtenteComparator}}
+
+
+Definisce il criterio di ordinamento per gli oggetti di tipo Utente.  
+
+
+Inheritance diagram for biblioteca.\+utils.\+Utente\+Comparator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1utils_1_1_utente_comparator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbiblioteca_1_1utils_1_1_utente_comparator_a64584861e165916a43c769e2e8b9e99f}{compare}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u1, \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}} u2)
+\begin{DoxyCompactList}\small\item\em Confronta due utenti per determinarne l\textquotesingle{}ordine alfabetico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definisce il criterio di ordinamento per gli oggetti di tipo Utente. 
+
+Implementa l\textquotesingle{}interfaccia Comparator per ordinare gli utenti in modo alfabetico. L\textquotesingle{}ordinamento è prioritario sul cognome e, in caso di omonimia, viene effettuato sul nome. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1utils_1_1_utente_comparator_a64584861e165916a43c769e2e8b9e99f}\index{biblioteca.utils.UtenteComparator@{biblioteca.utils.UtenteComparator}!compare@{compare}}
+\index{compare@{compare}!biblioteca.utils.UtenteComparator@{biblioteca.utils.UtenteComparator}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1utils_1_1_utente_comparator_a64584861e165916a43c769e2e8b9e99f} 
+int biblioteca.\+utils.\+Utente\+Comparator.\+compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u1}{, }\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente}{Utente}}}]{u2}{}\end{DoxyParamCaption})}
+
+
+
+Confronta due utenti per determinarne l\textquotesingle{}ordine alfabetico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u1} & Il primo utente da confrontare. \\
+\hline
+{\em u2} & Il secondo utente da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un intero negativo, zero o positivo.
+\end{DoxyReturn}
+Il confronto avviene in due fasi\+:
+\begin{DoxyEnumerate}
+\item Confronto tra i cognomi.
+\item Se i cognomi sono identici, confronto tra i nomi. 
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/utils/\mbox{\hyperlink{_utente_comparator_8java}{Utente\+Comparator.\+java}}\end{DoxyCompactItemize}

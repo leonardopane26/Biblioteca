@@ -1,0 +1,79 @@
+\doxysection{biblioteca.\+controller.\+Vista\+Prestito\+Controller Class Reference}
+\hypertarget{classbiblioteca_1_1controller_1_1_vista_prestito_controller}{}\label{classbiblioteca_1_1controller_1_1_vista_prestito_controller}\index{biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}}
+
+
+Controller per la visualizzazione dei dettagli di un prestito specifico.  
+
+
+Inheritance diagram for biblioteca.\+controller.\+Vista\+Prestito\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1controller_1_1_vista_prestito_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ae618fea5ccf3d5485fe7933134a2c64a}{Vista\+Prestito\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore del controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ad98a0facb8f055430c6b814b860f417a}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Inizializzatore Java\+FX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblioteca_1_1controller_1_1_vista_prestito_controller_a35536b8cb938ecef72b9e8abd23e5752}{inizializza\+Dati}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} prestito)
+\begin{DoxyCompactList}\small\item\em Inserisce i dati del prestito nei componenti grafici. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller per la visualizzazione dei dettagli di un prestito specifico. 
+
+Questa classe gestisce la finestra di riepilogo di un prestito selezionato. Mostra le informazioni incrociate tra Libro e Utente e permette di avviare il processo di restituzione caricando il relativo controller secondario. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ae618fea5ccf3d5485fe7933134a2c64a}\index{biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}!VistaPrestitoController@{VistaPrestitoController}}
+\index{VistaPrestitoController@{VistaPrestitoController}!biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}}
+\doxysubsubsection{\texorpdfstring{VistaPrestitoController()}{VistaPrestitoController()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ae618fea5ccf3d5485fe7933134a2c64a} 
+biblioteca.\+controller.\+Vista\+Prestito\+Controller.\+Vista\+Prestito\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore del controller. 
+
+Inizializza l\textquotesingle{}istanza del Gestore\+Biblioteca. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ad98a0facb8f055430c6b814b860f417a}\index{biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}!initialize@{initialize}}
+\index{initialize@{initialize}!biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_prestito_controller_ad98a0facb8f055430c6b814b860f417a} 
+void biblioteca.\+controller.\+Vista\+Prestito\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Inizializzatore Java\+FX. 
+
+Metodo richiamato automaticamente dopo il caricamento del file FXML. \Hypertarget{classbiblioteca_1_1controller_1_1_vista_prestito_controller_a35536b8cb938ecef72b9e8abd23e5752}\index{biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}!inizializzaDati@{inizializzaDati}}
+\index{inizializzaDati@{inizializzaDati}!biblioteca.controller.VistaPrestitoController@{biblioteca.controller.VistaPrestitoController}}
+\doxysubsubsection{\texorpdfstring{inizializzaDati()}{inizializzaDati()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1controller_1_1_vista_prestito_controller_a35536b8cb938ecef72b9e8abd23e5752} 
+void biblioteca.\+controller.\+Vista\+Prestito\+Controller.\+inizializza\+Dati (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{prestito}{}\end{DoxyParamCaption})}
+
+
+
+Inserisce i dati del prestito nei componenti grafici. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prestito} & L\textquotesingle{}oggetto Prestito da cui estrarre le informazioni.\\
+\hline
+\end{DoxyParams}
+Popola le label della vista con il titolo del libro, gli autori, la matricola dell\textquotesingle{}utente e la data di scadenza prevista. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/controller/\mbox{\hyperlink{_vista_prestito_controller_8java}{Vista\+Prestito\+Controller.\+java}}\end{DoxyCompactItemize}

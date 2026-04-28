@@ -1,0 +1,25 @@
+var classbiblioteca_1_1model_1_1_gestore_biblioteca =
+[
+    [ "GestoreBiblioteca", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a4a6cd6b1e5470a1cb9ca60f229ca8e9d", null ],
+    [ "aggiungiLibro", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a4a03f9cd00f6b92c00e75564cd10f715", null ],
+    [ "caricaDatiIniziali", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a3a1fdd3c00db8b5f8847ec0ffe4fbabb", null ],
+    [ "cercaLibriPerTitolo", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#afa531eb52e38c0e070f3f297297c6228", null ],
+    [ "cercaLibroPerISBN", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#aa62338fc6486c29b1d89b21943d20e80", null ],
+    [ "cercaUtentePerCognome", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#ac52127464a45f5f1248eb56d1fe96746", null ],
+    [ "cercaUtentePerMatricola", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#abd0f822697bcaeaee45e248719fb822c", null ],
+    [ "effettuaPrestito", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a0ea6a9625c36340491bdd049f27bde22", null ],
+    [ "filtraLibriDisponibili", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a9b1cdaadf7a7cd93e2f7ef5b7ea058ec", null ],
+    [ "filtraPrestitUtente", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a0c3ec1d56f953b5a1a9eb4e2e08d031c", null ],
+    [ "getCatalogoOrdinato", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a3a39dd0a3dea7c20694c71a22adfa2dd", null ],
+    [ "getListaLibri", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#af009f6278ed8f1a23a2d26a6fd6ada76", null ],
+    [ "getListaPrestiti", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a2416852ce05020bf23ee403503b61a8f", null ],
+    [ "getListaUtenti", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a3afdfbb97e09eef553374eaab7086f34", null ],
+    [ "getPrestitiInRitardo", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a9350707f0d655b7267ad6a87da290819", null ],
+    [ "getPrestitiOrdinati", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#acf079251230e5f96ffc65777ac4d7df3", null ],
+    [ "getUtentiOrdinati", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a6191f5ce1a03696e0bdc86e946b55cbd", null ],
+    [ "registraUtente", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#ae3868260217f98d3bb69a938d1257cef", null ],
+    [ "restituisciLibro", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a2bfba64d413eb5c7780fe05b993f9cfe", null ],
+    [ "rimuoviLibro", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#ad4ee0f89b4b30efab236d88426a2217e", null ],
+    [ "rimuoviUtente", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#a296c2dcbb8511de82c75bffd64b015ec", null ],
+    [ "salvaStato", "classbiblioteca_1_1model_1_1_gestore_biblioteca.html#af0b0c1129413cacc04e3d9444666b12f", null ]
+];

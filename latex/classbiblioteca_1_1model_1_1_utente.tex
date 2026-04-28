@@ -1,0 +1,186 @@
+\doxysection{biblioteca.\+model.\+Utente Class Reference}
+\hypertarget{classbiblioteca_1_1model_1_1_utente}{}\label{classbiblioteca_1_1model_1_1_utente}\index{biblioteca.model.Utente@{biblioteca.model.Utente}}
+
+
+Rappresenta un utente registrato presso la biblioteca.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_a929bfc48db7048f16596b369dca8baa0}{Utente}} (String nome, String cognome, String matricola, String email)
+\begin{DoxyCompactList}\small\item\em Costruttore della classe \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_acf30bbf97413448d110ed354eb105646}{get\+Nome}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_a748c5df00d40c00dc6d9f42c2287aa9f}{set\+Nome}} (String nome)
+\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_a45d9fe9e2323d735d477773e51dca962}{get\+Cognome}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_aecc43ab5c901302ed6437d8f2b5b8c02}{set\+Cognome}} (String cognome)
+\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_a2d7d6b85d4c6d42eb5f07d47a642548a}{get\+Matricola}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_a463795e1999195c125b9e1d61457d24f}{set\+Matricola}} (String matricola)
+\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_aeef83438b0e47a83856c567b0b2aca26}{get\+Email}} ()
+\item 
+void \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_ab328f012f5c017b39a332ed22f4426f3}{set\+Email}} (String email)
+\item 
+String \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_ad2fc710a19fdcff5147946442df3be3a}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Fornisce una rappresentazione testuale dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classbiblioteca_1_1model_1_1_utente_aed765083e2cda65b8f2fbdcd2117f695}{equals}} (Object obj)
+\begin{DoxyCompactList}\small\item\em Confronta due utenti per verificarne l\textquotesingle{}uguaglianza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rappresenta un utente registrato presso la biblioteca. 
+
+Questa classe memorizza i dati anagrafici e di contatto dei lettori, utilizzando la matricola come identificatore univoco per le operazioni di ricerca e confronto. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/14 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_a929bfc48db7048f16596b369dca8baa0}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!Utente@{Utente}}
+\index{Utente@{Utente}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{Utente()}{Utente()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_a929bfc48db7048f16596b369dca8baa0} 
+biblioteca.\+model.\+Utente.\+Utente (\begin{DoxyParamCaption}\item[{String}]{nome}{, }\item[{String}]{cognome}{, }\item[{String}]{matricola}{, }\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore della classe \doxylink{classbiblioteca_1_1model_1_1_utente}{Utente}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome del soggetto. \\
+\hline
+{\em cognome} & Cognome del soggetto. \\
+\hline
+{\em matricola} & Codice univoco assegnato all\textquotesingle{}utente. \\
+\hline
+{\em email} & Indirizzo di posta elettronica. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_aed765083e2cda65b8f2fbdcd2117f695}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!equals@{equals}}
+\index{equals@{equals}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_aed765083e2cda65b8f2fbdcd2117f695} 
+boolean biblioteca.\+model.\+Utente.\+equals (\begin{DoxyParamCaption}\item[{Object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Confronta due utenti per verificarne l\textquotesingle{}uguaglianza. 
+
+L\textquotesingle{}uguaglianza è basata esclusivamente sulla matricola, garantendo l\textquotesingle{}univocità dell\textquotesingle{}utente nel sistema. 
+\begin{DoxyParams}{Parameters}
+{\em obj} & L\textquotesingle{}oggetto da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se le matricole coincidono, false altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_a45d9fe9e2323d735d477773e51dca962}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!getCognome@{getCognome}}
+\index{getCognome@{getCognome}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{getCognome()}{getCognome()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_a45d9fe9e2323d735d477773e51dca962} 
+String biblioteca.\+model.\+Utente.\+get\+Cognome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Il cognome dell\textquotesingle{}utente. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_aeef83438b0e47a83856c567b0b2aca26}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!getEmail@{getEmail}}
+\index{getEmail@{getEmail}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{getEmail()}{getEmail()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_aeef83438b0e47a83856c567b0b2aca26} 
+String biblioteca.\+model.\+Utente.\+get\+Email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}indirizzo email dell\textquotesingle{}utente. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_a2d7d6b85d4c6d42eb5f07d47a642548a}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!getMatricola@{getMatricola}}
+\index{getMatricola@{getMatricola}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{getMatricola()}{getMatricola()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_a2d7d6b85d4c6d42eb5f07d47a642548a} 
+String biblioteca.\+model.\+Utente.\+get\+Matricola (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+La matricola identificativa. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_acf30bbf97413448d110ed354eb105646}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!getNome@{getNome}}
+\index{getNome@{getNome}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_acf30bbf97413448d110ed354eb105646} 
+String biblioteca.\+model.\+Utente.\+get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Il nome dell\textquotesingle{}utente. 
+\end{DoxyReturn}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_aecc43ab5c901302ed6437d8f2b5b8c02}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!setCognome@{setCognome}}
+\index{setCognome@{setCognome}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{setCognome()}{setCognome()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_aecc43ab5c901302ed6437d8f2b5b8c02} 
+void biblioteca.\+model.\+Utente.\+set\+Cognome (\begin{DoxyParamCaption}\item[{String}]{cognome}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cognome} & Il nuovo cognome da impostare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_ab328f012f5c017b39a332ed22f4426f3}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!setEmail@{setEmail}}
+\index{setEmail@{setEmail}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{setEmail()}{setEmail()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_ab328f012f5c017b39a332ed22f4426f3} 
+void biblioteca.\+model.\+Utente.\+set\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & La nuova email da impostare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_a463795e1999195c125b9e1d61457d24f}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!setMatricola@{setMatricola}}
+\index{setMatricola@{setMatricola}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{setMatricola()}{setMatricola()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_a463795e1999195c125b9e1d61457d24f} 
+void biblioteca.\+model.\+Utente.\+set\+Matricola (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & La nuova matricola da assegnare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_a748c5df00d40c00dc6d9f42c2287aa9f}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!setNome@{setNome}}
+\index{setNome@{setNome}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_a748c5df00d40c00dc6d9f42c2287aa9f} 
+void biblioteca.\+model.\+Utente.\+set\+Nome (\begin{DoxyParamCaption}\item[{String}]{nome}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Il nuovo nome da impostare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbiblioteca_1_1model_1_1_utente_ad2fc710a19fdcff5147946442df3be3a}\index{biblioteca.model.Utente@{biblioteca.model.Utente}!toString@{toString}}
+\index{toString@{toString}!biblioteca.model.Utente@{biblioteca.model.Utente}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1model_1_1_utente_ad2fc710a19fdcff5147946442df3be3a} 
+String biblioteca.\+model.\+Utente.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fornisce una rappresentazione testuale dell\textquotesingle{}utente. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+Stringa nel formato "{}\+Cognome Nome (\+Matricola\+: X)"{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/model/\mbox{\hyperlink{_utente_8java}{Utente.\+java}}\end{DoxyCompactItemize}

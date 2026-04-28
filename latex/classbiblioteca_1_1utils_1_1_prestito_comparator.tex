@@ -1,0 +1,57 @@
+\doxysection{biblioteca.\+utils.\+Prestito\+Comparator Class Reference}
+\hypertarget{classbiblioteca_1_1utils_1_1_prestito_comparator}{}\label{classbiblioteca_1_1utils_1_1_prestito_comparator}\index{biblioteca.utils.PrestitoComparator@{biblioteca.utils.PrestitoComparator}}
+
+
+Fornisce un criterio di ordinamento temporale per gli oggetti di tipo Prestito.  
+
+
+Inheritance diagram for biblioteca.\+utils.\+Prestito\+Comparator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbiblioteca_1_1utils_1_1_prestito_comparator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbiblioteca_1_1utils_1_1_prestito_comparator_a6d2df2726fd5b549c885a5949d1eee05}{compare}} (\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} p1, \mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}} p2)
+\begin{DoxyCompactList}\small\item\em Confronta due prestiti in base alla data di scadenza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fornisce un criterio di ordinamento temporale per gli oggetti di tipo Prestito. 
+
+Implementa l\textquotesingle{}interfaccia Comparator per permettere l\textquotesingle{}ordinamento dei prestiti in base alla data di scadenza (data\+Fine). È utile per visualizzare in cima alla lista i prestiti più urgenti o già scaduti. \begin{DoxyAuthor}{Author}
+lpane 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/04-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbiblioteca_1_1utils_1_1_prestito_comparator_a6d2df2726fd5b549c885a5949d1eee05}\index{biblioteca.utils.PrestitoComparator@{biblioteca.utils.PrestitoComparator}!compare@{compare}}
+\index{compare@{compare}!biblioteca.utils.PrestitoComparator@{biblioteca.utils.PrestitoComparator}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily \label{classbiblioteca_1_1utils_1_1_prestito_comparator_a6d2df2726fd5b549c885a5949d1eee05} 
+int biblioteca.\+utils.\+Prestito\+Comparator.\+compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{p1}{, }\item[{\mbox{\hyperlink{classbiblioteca_1_1model_1_1_prestito}{Prestito}}}]{p2}{}\end{DoxyParamCaption})}
+
+
+
+Confronta due prestiti in base alla data di scadenza. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & Il primo prestito da confrontare. \\
+\hline
+{\em p2} & Il secondo prestito da confrontare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valore negativo se la scadenza di p1 è precedente a p2, zero se sono uguali, un valore positivo se è successiva.
+\end{DoxyReturn}
+Il confronto sfrutta il metodo {\ttfamily compare\+To} della classe Local\+Date. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/biblioteca/utils/\mbox{\hyperlink{_prestito_comparator_8java}{Prestito\+Comparator.\+java}}\end{DoxyCompactItemize}
